@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Теория</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/cover.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Теория</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap" >
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="video.html">Видеоуроки</a>
+        <a class="nav-link active" aria-current="page"  href="#">Теория</a>
+        <a class="nav-link" href="test.html">Тест</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="overflow-x: hidden;">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="teoria.html">
+              <span data-feather="home"></span>
+              Главная
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок1.html">
+              <span data-feather="file-text"></span>
+              Урок 1. Hello Kitty!
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="file-text"></span>
+              Урок 2. Щелчок кнопки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок3.html">
+              <span data-feather="file-text"></span>
+              Урок 3. Уведомления
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок4.html">
+              <span data-feather="file-text"></span>
+              Урок 4. Смена цветов
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок5.html">
+              <span data-feather="file-text"></span>
+              Урок 5. На другой экран
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок6.html">
+              <span data-feather="file-text"></span>
+              Урок 6. Темы и стили
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="урок7.html">
+              <span data-feather="file-text"></span>
+              Урок 7. AlertDialog
+            </a>
+          </li>
+
+
+
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"> Щелчок кнопки</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+          
+          </div>
+         
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-md-10">
+
+    
+          <article class="blog-post">
+            <h2 class="blog-post-title">Счётчик ворон </h2>
+    
+<p>В прошлом уроке Hello Kitty мы использовали ImageButton. Сегодня будем работать с обычной кнопкой. В режиме Design подведите курсор к компоненту Button и перетащите его на форму. В результате ваших действий на форме появится стандартная кнопка с настройками по умолчанию. В правой части экрана у вас имеется окно Attributes, в котором вы можете настроить необходимые свойства для кнопки. По умолчанию студия присвоит значение button атрибуту ID, который идёт самым первым. Если временно переключиться в режим Text, то увидите, что на самом деле атрибут имеет значение @+id/button. Если в вашем приложении будет много кнопок, то студия будет генерировать имена button2, button3 и т.д. Не используйте подобные идентификаторы, а сразу давайте им говорящие имена - button_name, button_food. Я пока оставил имя button. Атрибуту Text присвойте текст Поздороваться. Будет отлично, если вы добавите этот текст через ресурсы. В учебных примерах я буду использовать текст прямо в свойствах для экономии места, но вы должны привыкать писать код правильно.</p>          
+           
+            
+            <hr>
+
+            <img src="image/teoria19.png" class="img-fluid" alt="...">
+            <p>Если вы создавали новый проект на основе шаблона Empty Activity, то там уже был компонент TextView с текстом Hello, World. Компонент TextView является текстовой меткой для вывода текста, который нельзя редактировать. В метке будем выводить приветствие после щелчка кнопки. В окне свойств удаляем текст из свойства Text, чтобы в текстовой метке ничего не было. Проследите, чтобы у него был идентификатор. Если в окне свойств ничего нет, то добавьте свой идентификатор, например, textView (в текстовом режиме @+id/textView).</p>
+            <p>Настройте взаимное расположение компонентов по своему желанию. Будем считать, что интерфейс программы готов - у нас есть кнопка для нажатия и текстовая метка для вывода сообщений.</p>
+            <p>Откройте файл класса MainActivity и в методе onCreate() напишите код.</p>
+           
+           
+
+    <pre class="bg-light"><code> 
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+        
+            setContentView(R.layout.activity_main)
+        
+            val textView: TextView = findViewById(R.id.textView)
+        
+            val button: Button = findViewById(R.id.button)
+            button.setOnClickListener {
+                textView.text = "Hello Kitty!"
+            }
+        }
+    </code></pre>
+
+<p>Этот код вам уже знаком по предыдущему занятию. Если вы набирали текст самостоятельно, то у вас всё получится. Если просто скопировали и получили ошибки, то разбирайтесь сами. Я лентяям не помогаю.</p>
+<p>Запускаем проект и нажимаем на кнопку, чтобы увидеть результат. Можете изменить текст по своему желанию, например, на Ты кто такой? Давай, до свидания!, но это сообщение будет выглядеть мягко говоря, странным.</p>
+<p>Полный текст кода.</p>
+
+<pre class="bg-light"><code> 
+    // Если этот код работает, его написал Александр Климов,
+    // а если нет, то не знаю, кто его писал.
+    package ru.alexanderklimov.counter
+    
+    import android.os.Bundle
+    import android.widget.Button
+    import android.widget.TextView
+    import androidx.appcompat.app.AppCompatActivity
+    
+    
+    class MainActivity : AppCompatActivity() {
+    
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+    
+            setContentView(R.layout.activity_main)
+    
+            val textView: TextView = findViewById(R.id.textView)
+    
+            val button: Button = findViewById(R.id.button)
+            button.setOnClickListener {
+                textView.text = "Hello Kitty!"
+            }
+        }
+    }
+</code></pre>
+<img src="image/teoria20.png" class="img-fluid" alt="...">
+
+<h2>Альтернативные варианты</h2>
+<p>Существуют альтернативные варианты для обработки щелчка кнопки, которые могут встретиться вам в интернете. Со временем вы сами выберите удобный вам стиль.</p>
+<p>Например, кнопку и метку можно объявить стандартным Java-способом через метод findViewById() и затем подключать слушатель к кнопке.</p>
+
+
+<pre class="bg-light"><code> 
+    val button = findViewById&lt;Button>(R.id.button)
+        // или
+        val button: Button = findViewById(R.id.button)
+        
+        // стандартный способ, студия предложит сконвертировать в лямбду-выражение
+        button.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v: View?) {
+                textView.text = "Hello Kitty!"
+            }
+        })
+        
+        // тоже java-стиль. редко используется
+        button.setOnClickListener(this::clickEvent)
+        
+        private fun clickEvent(view: View){
+            val textView = findViewById&lt;TextView>(R.id.textView)
+            textView.text = "Hello Kitty!"
+        }
+</code></pre>
+
+<p>На самом деле Java-стиль в Kotlin практически никто не использует. А вот ещё пара примеров для Kotlin.</p>
+    
+<pre class="bg-light"><code> 
+
+    // у обработчика щелчка есть параметр v, который можно использовать для доступа к самой кнопке
+    button.setOnClickListener({ v ->
+        textView.text = "Hello Kitty!"
+        v.setBackgroundColor(Color.RED)
+    
+    })
+    
+    // параметр v можно не указывать явно, 
+    // так как есть специальное ключевое слово it для этих целей
+    button.setOnClickListener {
+        textView.text = "Hello Kitty!"
+        it.setBackgroundColor(Color.YELLOW)
+    }
+</code></pre>
+
+<p>Новички на первых порах часто делают элементарную ошибку - помещают код работы с компонентами до метода setContentView(). Запомните, сначала нужно вывести шаблон (R.layout.activity_main), а только потом можно работать с кнопками, текстовыми полями, переключателями и т.д. В нашем случае используется отдельный метод для кнопки, который формируется после метода setContentView().</p>
+<p>Добавьте в проект новую кнопку и разместите под первой кнопкой. Подправьте несколько атрибутов, например, так.</p>
+
+<pre class="bg-light"><code> 
+    &lt;Button
+    android:id="@+id/button_сounter"
+    ... другие атрибуты
+    android:text="Считаем ворон" />
+    </code></pre>
+
+<p>Я поменял для кнопки текст и идентификатор, а также некоторые параметры, отвечающие за положение кнопки на экране. Переключитесь в графический режим и посмотрите, как выглядит кнопка.</p>
+<p>Снова открываем файл MainActivity.kt и пишем следующий код сразу после объявления класса и до метода onCreate():</p>
+
+<pre class="bg-light"><code> 
+    private var counter: Int = 0
+    </code></pre>
+
+<p>В методе onCreate() после кода для первой кнопки пишем:</p>
+
+<pre class="bg-light"><code> 
+    button_counter.setOnClickListener {
+        textView.text = "Я насчитал ${++counter} ворон"
+    }
+    </code></pre>
+
+    <p>Ещё раз напоминаю, не копируйте текст со страницы, а вводите текст вручную. Так вы быстрее освоите программирование, кроме того научитесь пользоваться системой подсказок и уменьшите количество опечаток.</p>
+    <p>В этом примере мы создали дополнительную переменную-счётчик counter, которая будет содержать число подсчитанных ворон. После создания мы сразу её инициализировали.</p>
+    <p>В обработчике щелчка мы увеличиваем значение счётчика через оператор инкремента ++, который ставим перед переменной. Попробуйте разместить оператор после переменной и посмотреть на результат, так вы поймёте разницу от местоположения оператора у переменной.</p>
+    <p>Запускаем приложение и начинаем щёлкать по кнопке. При каждом щелчке счётчик counter будет увеличиваться на единицу и эта информация будет отображаться на экране.</p>
+
+<img src="image/teoria21.png" class="img-fluid" alt="...">
+
+            <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-secondary " href="#">Наверх</a>
+            <a class="btn btn-outline-primary" href="урок3.html" tabindex="-1" aria-disabled="true">Следующий урок</a>
+          </nav>
+    
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Теория</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/cover.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Теория</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap" >
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="video.html">Видеоуроки</a>
+        <a class="nav-link active" aria-current="page"  href="#">Теория</a>
+        <a class="nav-link" href="test.html">Тест</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="overflow-x: hidden;">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="teoria.html">
+              <span data-feather="home"></span>
+              Главная
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок1.html">
+              <span data-feather="file-text"></span>
+              Урок 1. Hello Kitty!
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок2.html">
+              <span data-feather="file-text"></span>
+              Урок 2. Щелчок кнопки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок3.html">
+              <span data-feather="file-text"></span>
+              Урок 3. Уведомления
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок4.html">
+              <span data-feather="file-text"></span>
+              Урок 4. Смена цветов
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="урок5.html">
+              <span data-feather="file-text"></span>
+              Урок 5. На другой экран
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок6.html">
+              <span data-feather="file-text"></span>
+              Урок 6. Темы и стили
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="file-text"></span>
+              Урок 7. AlertDialog
+            </a>
+          </li>
+ 
+        </ul>
+      </div>
+    </nav>
+    
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+        <h1>Диалоговые окна</h1>
+
+        <p>
+        <a href="#dialogfragment">DialogFragment</a><br>
+        <a href="#onebutton">AlertDialog с одной кнопкой</a><br>
+        <a href="#title">Заголовок. Метод setTitle()</a><br>
+        <a href="#basesample">Нелёгкий выбор - пример с двумя кнопками</a><br>
+        <a href="#three">Три кнопки</a><br>
+        <a href="#alertlist">AlertDialog со списком</a><br>
+        <a href="#alertradio">AlertDialog с переключателями</a><br>
+        <a href="#alertcheck">AlertDialog с флажками</a><br>
+        <a href="#autoclose">Автоматическое закрытие окна</a><br>
+        <a href="#ratingbar">AlertDialog с рейтингом</a><br>
+        <a href="#custom_layout">AlertDialog с собственной разметкой</a><br>
+        <a href="#callback">Передать данные в активность</a><br>
+        </p>
+        
+        <p>В Android с первых версий был класс <b>Dialog</b> и производные от него, например, <b>AlertDialog</b>, <b>DatePickerDialog</b> и другие. Диалоговые окна не занимают весь экран, являются модальными и предназначены для принятия пользователем решения или ввода дополнительной информации.</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-10">
+                
+                <h2>DialogFragment</h2>
+                
+                <p>Раньше диалоговое окно вызывали напрямую, сейчас рекомендуется использовать в составе <b>DialogFragment</b>.</p>
+                
+                <p>Использование фрагментов для диалоговых окон в силу своей архитектуры является удобным вариантом в приложениях, который лучше справляется с поворотами устройства, нажатием кнопки "Назад", лучше подходит под разные размеры экранов и т.д.</p>
+                
+                <p>В ранних примерах вам могут встречаться классы диалогов из устаревших пакетов <b>android.app.DialogFragment</b>, <b>android.support.v4.app.DialogFragment</b>, <b>android.support.v7.app.AppCompatDialogFragment</b>.</p>
+                
+                <p>После появления AndroidX имена пакетов очередной раз изменились, теперь следует импортировать <b>androidx.fragment.app.DialogFragment</b>, <b>androidx.appcompat.app.AlertDialog</b> и другие аналогичные классы. Не забывайте импортировать правильные пакеты при использовании старых проектов.</p>
+                
+                <p>Для создания диалога следует наследоваться от класса <b>DialogFragment</b>. Создадим новый класс <b>MyDialogFragment</b>:</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                package ru.alexanderklimov.dialog
+                
+                import androidx.fragment.app.DialogFragment
+                
+                class MyDialogFragment : DialogFragment() {}
+                
+                <hr>
+                //Java
+                package ru.alexanderklimov.dialog;
+                
+                import androidx.fragment.app.DialogFragment;
+                
+                public class MyDialogFragment extends DialogFragment {}
+                </code></pre>
+                
+                <p>Вызвать диалоговое окно можно через метод <b>show()</b>. Сделаем это по нажатию кнопки.</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                button.setOnClickListener {
+                    val myDialogFragment = MyDialogFragment()
+                    val manager = supportFragmentManager
+                    myDialogFragment.show(manager, "myDialog")
+                }
+                <hr>
+                //Java
+                public void onClick(View view) {
+                    FragmentManager manager = getSupportFragmentManager();
+                    MyDialogFragment myDialogFragment = new MyDialogFragment();
+                    myDialogFragment.show(manager, "myDialog");
+                }
+                </code></pre>
+                
+                <p><img src="image/dialogfragment3.png" alt="DialogFragment"></p>
+                
+                <p>Скорее всего вы увидите пустой прямоугольник или квадрат. А возможно у вас просто потемнеет экран активности.</p>
+                
+                <p>Так как это фрагмент, то нам нужно позвать менеджера фрагментов и попросить его показать фрагмент.</p>
+                
+                <p>Для вызова диалога мы создаём экземпляр класса <b>MyDialogFragment</b> и вызываем метод <b>show()</b>. Метод принимает два параметра: объект класса <b>FragmentManager</b>, получаемый через метод <b>getSupportFragmentManager()</b>, и тег - идентификатор диалога в виде строковой константы, по которому можно идентифицировать диалоговое окно, если их будет много в нашем проекте.</p>
+                
+                <p>Существует и альтернативный вариант показа окна через транзакцию.</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                val button: Button = findViewById(R.id.button)
+                button.setOnClickListener {
+                    val myDialogFragment = MyDialogFragment()
+                    val manager = supportFragmentManager
+                    //myDialogFragment.show(manager, "dialog")
+                    val transaction: FragmentTransaction = manager.beginTransaction()
+                    myDialogFragment.show(transaction, "dialog")
+                }
+                <hr>
+                // Java
+                public void onClick(View view) {
+                    MyDialogFragment myDialogFragment = new MyDialogFragment();
+                    FragmentManager manager = getSupportFragmentManager();
+                    //myDialogFragment.show(manager, "dialog");
+                
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    myDialogFragment.show(transaction, "dialog");
+                }
+                </code></pre>
+                
+                <p>Мы получили пустой бесполезный фрагмент. Следует заняться его конструированием. В созданном классе нужно переопределить метод <b>onCreateDialog()</b>. Если используется разметка, то также используется метод <b>onCreateView()</b>, как и у обычных фрагментов. Скорее всего вы не станете заново изобретать велосипед, а будете использовать готовые варианты диалоговых окон.</p>
+                
+                <h2 id="alertdialog">AlertDialog</h2>
+                
+                <p>Самый распространённый вариант диалогового окна - это <b>AlertDialog</b>. С него и начнём.</p>
+                
+                <p>Диалоговое окно <b>AlertDialog</b> является расширением класса <b>Dialog</b>, и это наиболее используемое диалоговое окно в практике программиста. Очень часто требуется показать диалог с кнопками <b>Да</b> и <b>Нет</b>, <del>а также Мур и Мяу</del>. В создаваемых диалоговых окнах можно задавать следующие элементы:</p>
+                
+                <ul>
+                <li>заголовок</li>
+                <li>текстовое сообщение</li>
+                <li>кнопки: от одной до трёх</li>
+                <li>список</li>
+                <li>флажки</li>
+                <li>переключатели</li>
+                </ul>
+                
+                <h2 id="onebutton">AlertDialog с одной кнопкой</h2>
+                
+                <p>Начнём с простого примера - покажем на экране диалоговое окно с одной кнопкой.</p>
+                
+                <p>В класс фрагмента добавляем метод.</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                package ru.alexanderklimov.dialog
+                
+                import android.app.Dialog
+                import android.os.Bundle
+                import androidx.appcompat.app.AlertDialog
+                import androidx.fragment.app.DialogFragment
+                
+                class MyDialogFragment : DialogFragment() {
+                
+                    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+                        return activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.setTitle("Важное сообщение!")
+                                    .setMessage("Покормите кота!")
+                                    .setIcon(R.drawable.hungrycat)
+                                    .setPositiveButton("ОК, иду на кухню") {
+                                        dialog, id ->  dialog.cancel()
+                                    }
+                            builder.create()
+                        } ?: throw IllegalStateException("Activity cannot be null")
+                    }
+                }
+                <hr>
+                //Java
+                // Показан только метод, без предыдущего кода для фрагмента
+                @NonNull
+                @Override
+                public Dialog onCreateDialog(Bundle savedInstanceState) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Важное сообщение!")
+                            .setMessage("Покормите кота!")
+                            .setIcon(R.drawable.hungrycat)
+                            .setPositiveButton("ОК, иду на кухню", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // Закрываем диалоговое окно
+                                    dialog.cancel();
+                                }
+                            });
+                    return builder.create();
+                }
+                </code></pre>
+                
+                <p>Внешний вид от версии к версии может меняться. В частности, недавно поменяли цвет текста для кнопки.</p>
+                
+                <p><img src="image/alertdialog9.png" alt="AlertDialog с одной кнопкой"></p>
+                
+                <p>Сначала мы создаём объект класса <b>AlertDialog.Builder</b>, передав в качестве параметра ссылку на активность. Затем, используя методы класса <b>Builder</b>, задаём для создаваемого диалога заголовок (метод <b>setTitle()</b>), текстовое сообщение в теле диалога (метод <b>setMessage()</b>), значок (метод <b>setIcon()</b>), а также кнопку через метод под странным названием <b>setPositiveButton()</b>.</p>
+                
+                <p>Сама обработка нажатия кнопки внутри диалогового окна задаётся внутри метода <b>setPositiveButton()</b>. В нашем случае мы просто закрываем окно диалога через метод <b>cancel()</b>.</p>
+                
+                <p>Обратите внимание на не совсем обычный способ вызова череды методов цепочкой через точку <b>.setMessage("Покормите кота!").setIcon(R.drawable.hungrycat)</b> и т.д. Такой синтаксис можно часто увидеть в jQuery. При таком способе не нужно использовать точку с запятой в конце каждого метода, вы просто склеиваете все вызовы. Но можете использовать и обычный синтаксис.</p>
+                
+                <p>Если вы используете Java 8, то студия предложит использовать лямбда-выражение вместо анонимного класса. Решайте сами, в каком стиле писать код.</p>
+                
+                <h2  id="title">Заголовок. Метод setTitle()</h2>
+                
+                <p>Немного остановимся на заголовке. Старайтесь использовать небольшие сообщения. Если сообщение будет средней длины, то оно может разместиться на двух строках. Если сообщение будет слишком длинным, то оно обрежется.</p>
+                
+                <pre class="bg-light"><code>
+                // сообщение на две строки
+                .setTitle("Важное сообщение! Пожалуйста, прочитайте его!")
+                
+                // длинное сообщение
+                .setTitle("Важное сообщение! Пожалуйста, прочитайте его! Очень прошу!")
+                </code></pre>
+                
+                <img src="image/alertdialog12.png" alt="AlertDialog Title">
+                
+                <p>А если очень хочется вывести длинную строку в заголовке? Тогда вместо <b>setTitle()</b> можно вызвать <b>setCustomTitle()</b> и передать ему <b>View</b>, в нашем случае это будет <b>TextView</b>.</p>
+                
+                <pre class="bg-light"><code>
+                <b>val textView = TextView(activity)
+                
+                with(textView) {
+                    textView.text = "Важное сообщение! Пожалуйста, прочитайте его! Очень прошу!"
+                    textView.textSize = 18.0F
+                    textView.setTypeface(null, Typeface.BOLD)
+                    textView.gravity = Gravity.CENTER
+                }</b>
+                
+                val builder = AlertDialog.Builder(it)
+                builder
+                    //.setTitle("Важное сообщение! Пожалуйста, прочитайте его! Очень прошу!")
+                    <b>.setCustomTitle(textView)</b>
+                    .setMessage("Покормите кота!")
+                    .setIcon(R.drawable.hungrycat)
+                    .setPositiveButton("ОК, иду на кухню") {
+                            dialog, id ->  dialog.cancel()
+                    }
+                builder.create()
+                </code></pre>
+                
+                <p>При этом перестал выводиться значок. Обидно.</p>
+                
+                <img src="image/alertdialog13.png" alt="AlertDialog Title">
+                
+                <h2 id="basesample">Нелёгкий выбор - пример с двумя кнопками</h2>
+                
+                <p><img src="image/alertcat.jpg" alt="Нелёгкий выбор"></p>
+                
+                <p>Теперь рассмотрим пример создания диалогового окна с двумя кнопками на основе иллюстрации.</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                package ru.alexanderklimov.dialog
+                
+                import android.app.Dialog
+                import android.content.DialogInterface
+                import android.os.Bundle
+                import android.widget.Toast
+                import androidx.appcompat.app.AlertDialog
+                import androidx.fragment.app.DialogFragment
+                
+                class MyDialogFragment : DialogFragment() {
+                
+                    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+                        return activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.setTitle("Выбор есть всегда")
+                                .setMessage("Выбери пищу")
+                                .setIcon(R.drawable.hungrycat)
+                                .setCancelable(true)
+                                .setPositiveButton("Вкусная пища") { _, _ ->
+                                    Toast.makeText(
+                                        activity,
+                                        "Вы сделали правильный выбор",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                                .setNegativeButton(
+                                    "Здоровая пища"
+                                ) { _, _ ->
+                                    Toast.makeText(
+                                        activity, "Возможно вы правы",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                            builder.create()
+                        } ?: throw IllegalStateException("Activity cannot be null")
+                    }
+                }
+                
+                <hr>
+                // Java
+                package ru.alexanderklimov.dialog;
+                
+                import ...
+                
+                public class MyDialogFragment extends DialogFragment {
+                    @NonNull
+                    @Override
+                    public Dialog onCreateDialog(Bundle savedInstanceState) {
+                        String title = "Выбор есть всегда";
+                        String message = "Выбери пищу";
+                        String button1String = "Вкусная пища";
+                        String button2String = "Здоровая пища";
+                
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setTitle(title);  // заголовок
+                        builder.setMessage(message); // сообщение
+                        builder.setPositiveButton(button1String, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(getActivity(), "Вы сделали правильный выбор",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        builder.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(getActivity(), "Возможно вы правы", Toast.LENGTH_LONG)
+                                        .show();
+                            }
+                        });
+                        builder.setCancelable(true);
+                
+                        return builder.create();
+                    }
+                }
+                </code></pre>
+                
+                <p>Внешний вид диалоговых окон в разных версиях Android.</p>
+                 
+                <p><img src="image/alertdialog10.png" alt="AlertDialog с кнопками"></p>
+                <p><img src="image/alertdialog1.png" alt="AlertDialog с кнопками"></p>
+                
+                <p>Общая часть кода осталась прежней - объект класса <b>AlertDialog.Builder</b>, методы для настройки окна, а также кнопки диалога и обработку событий на них. В <b>AlertDialog</b> можно добавить только по одной кнопке каждого типа: <b>Positive</b>, <b>Neutral</b> и <b>Negative</b>, т. е. максимально возможное количество кнопок в диалоге — три. На названия кнопок не обращайте внимания, они не несут смысловой нагрузки, а только определяют порядок вывода. Причём в разных версиях Android порядок менялся. Поэтому на старых устройствах кнопка "Да" может быть первой, а на новых - последней. Для каждой кнопки используется один из методов с префиксом <b>set...Button</b>, которые принимают в качестве параметров надпись для кнопки и интерфейс <b>DialogInterface.OnClickListener</b>, определяющий действие при нажатии. Чтобы пользователь не мог закрыть диалог нажатием в любой точке экрана, вызывается метод <b>setCancelable()</b> с значением <i>true</i>.</p>
+                
+                <h2 id="three">Три кнопки</h2>
+                
+                <p>Рассмотрим пример с тремя кнопками. Разницы практически нет. Повторяем все предыдущие шаги, для отображения диалогового окна вызывается метод <b>builder.create()</b>. Например, для создания диалога с кнопками <i>Мяу, Гав, Сам дурак!</i> код будет выглядеть приблизительно так:</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+                    return activity?.let {
+                        val builder = AlertDialog.Builder(it)
+                        builder
+                            .setCancelable(true)
+                            .setMessage("Выберите правильный ответ")
+                            .setPositiveButton("Мяу") { dialog, _ ->
+                                dialog.cancel()
+                            }
+                            .setNeutralButton("Гав") { dialog, _ ->
+                                dialog.cancel()
+                            }
+                            .setNegativeButton("Сам дурак") { dialog, _ ->
+                                dialog.cancel()
+                            }
+                        builder.create()
+                    } ?: throw IllegalStateException("Activity cannot be null")
+                }
+                <hr>
+                // Java
+                @NonNull
+                @Override
+                public Dialog onCreateDialog(Bundle savedInstanceState) {
+                
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Выберите правильный ответ")
+                            .setCancelable(true)
+                            .setPositiveButton("Мяу",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog,
+                                                            int id) {
+                                            dialog.cancel();
+                                        }
+                                    })
+                            .setNeutralButton("Гав",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog,
+                                                            int id) {
+                                            dialog.cancel();
+                                        }
+                                    })
+                            .setNegativeButton("Сам дурак!",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog,
+                                                            int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                
+                    return builder.create();
+                }
+                </code></pre>
+                
+                <p><img src="image/alertdialog2.png" alt="AlertDialog в onCreateDialog"></p>
+                
+                <h2 id="alertlist">AlertDialog со списком</h2>
+                
+                <p>Если вам нужно диалоговое окно со списком выбираемых пунктов вместо кнопок, то используйте метод <b>setItems()</b>, где нужно указать массив данных для отображения в списке диалога. Данный метод нельзя использовать вместе с методом <b>setMessage()</b>, так они выводят содержимое в основной части окна.</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                package ru.alexanderklimov.dialog
+                
+                import android.app.Dialog
+                import android.os.Bundle
+                import android.widget.Toast
+                import androidx.appcompat.app.AlertDialog
+                import androidx.fragment.app.DialogFragment
+                
+                class MyDialogFragment : DialogFragment() {
+                
+                    private val catNames = arrayOf("Васька", "Рыжик", "Мурзик")
+                
+                    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+                        return activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.setTitle("Выберите кота")
+                                    .setItems(catNames
+                                    ) { dialog, which ->
+                                        Toast.makeText(activity, "Выбранный кот: ${catNames[which]}",
+                                                Toast.LENGTH_SHORT).show()
+                                    }
+                            builder.create()
+                        } ?: throw IllegalStateException("Activity cannot be null")
+                    }
+                }
+                <hr>
+                // Java
+                @NonNull
+                @Override
+                public Dialog onCreateDialog(Bundle savedInstanceState) {
+                
+                    final String[] catNamesArray = {"Васька", "Рыжик", "Мурзик"};
+                
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Выберите кота")
+                            .setItems(catNamesArray, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(getActivity(),
+                                            "Выбранный кот: " + catNamesArray[which],
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                
+                    return builder.create();
+                }
+                </code></pre>
+                
+                <p>Выбранный элемент содержится в параметре <b>which</b>. При выборе одного из пунктов меню появится всплывающее уведомление, показывающее выбранного кота.</p>
+                
+                <p>Напоминаю, что внешний вид окна менялся от версии к версии.</p>
+                
+                <p><img src="image/alertdialog3.png" alt="AlertDialog со списком"></p>
+                
+                <h2 id="alertradio">AlertDialog с переключателями</h2>
+                
+                <p>Для создания диалогового окна с переключателями применяется метод <b>setSingleChoiceitems()</b> вместо метода <b>setItems()</b>.</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                package ru.alexanderklimov.dialog
+                
+                import android.app.Dialog
+                import android.os.Bundle
+                import android.widget.Toast
+                import androidx.appcompat.app.AlertDialog
+                import androidx.fragment.app.DialogFragment
+                
+                class MyDialogFragment : DialogFragment() {
+                
+                    private val catNames = arrayOf("Васька", "Рыжик", "Мурзик")
+                
+                    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+                        return activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.setTitle("Выберите любимое имя кота")
+                                    .setSingleChoiceItems(catNames, -1
+                                    ) { dialog, item ->
+                                        Toast.makeText(activity, "Любимое имя кота:  ${catNames[item]}",
+                                                Toast.LENGTH_SHORT).show()
+                                    }
+                                    .setPositiveButton("OK"
+                                    ) { dialog, id ->
+                                        // User clicked OK, so save the selectedItems results somewhere
+                                        // or return them to the component that opened the dialog
+                                    }
+                                    .setNegativeButton("Отмена") {
+                                        dialog, id ->
+                                    }
+                
+                            builder.create()
+                        } ?: throw IllegalStateException("Activity cannot be null")
+                    }
+                }
+                <hr>
+                //Java
+                @Override
+                public Dialog onCreateDialog(Bundle savedInstanceState) {
+                
+                    final String[] catNamesArray = {"Васька", "Рыжик", "Мурзик"};
+                
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Выберите любимое имя кота")
+                            // добавляем переключатели
+                            .setSingleChoiceItems(catNamesArray, -1,
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog,
+                                                            int item) {
+                                            Toast.makeText(
+                                                    getActivity(),
+                                                    "Любимое имя кота: "
+                                                            + catNamesArray[item],
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // User clicked OK, so save the mSelectedItems results somewhere
+                                    // or return them to the component that opened the dialog
+                
+                                }
+                            })
+                            .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int id) {
+                
+                                }
+                            });
+                
+                    return builder.create();
+                }
+                </code></pre> 
+                
+                <p>Обратите внимание на следующие детали. При выборе переключателя диалоговое окно закрываться не будет. Поэтому необходимо предусмотреть механизм закрытия окна, например, добавить кнопку. Второй момент - в методе <b>setSingleChoiceitems</b> для первого параметра используется массив значений для переключателей, а для второго параметра используется целочисленное значение индекса переключателя, который будет включён по умолчанию при вызове диалогового окна. Если вы хотите, чтобы все переключатели при запуске были в выключенном состоянии, то используйте значение -1.</p>
+                
+                <p><img src="image/alertdialog4.png" alt="AlertDialog с переключателями"></p>
+                
+                <img src="image/alertdialog11.png" alt="AlertDialog с переключателями">
+                
+                <h2 id="alertcheck">AlertDialog с флажками</h2>
+                
+                <p>Если вы хотите использовать вместо переключателей флажки <b>Checkbox</b> для множественного выбора, то вам нужен метод <b>setMultiChoiceItems()</b>. Код практически идентичен предыдущему примеру:</p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                package ru.alexanderklimov.dialog
+                
+                import android.app.Dialog
+                import android.os.Bundle
+                import android.util.Log
+                import android.widget.Toast
+                import androidx.appcompat.app.AlertDialog
+                import androidx.fragment.app.DialogFragment
+                
+                class MyDialogFragment : DialogFragment() {
+                
+                    private val catNames = arrayOf("Васька", "Рыжик", "Мурзик")
+                    private val checkedItems = booleanArrayOf(false, true, false)
+                
+                    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+                        return activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.setTitle("Выберите котов")
+                                .setMultiChoiceItems(
+                                    catNames, checkedItems
+                                ) { _, which, isChecked ->
+                                    checkedItems[which] = isChecked
+                                    // val name = catNames[which] // Get the clicked item
+                                    // println(name)
+                                }
+                                .setPositiveButton(
+                                    "Готово"
+                                ) { _, _ ->
+                                    for (i in catNames.indices) {
+                                        val checked = checkedItems[i]
+                                        if (checked) {
+                                            println(catNames[i])
+                                        }
+                                    }
+                                }
+                                .setNegativeButton(
+                                    "Отмена"
+                                ) { dialog, _ ->
+                                    dialog.cancel()
+                                }
+                
+                            builder.create()
+                        } ?: throw IllegalStateException("Activity cannot be null")
+                    }
+                }
+                <hr>
+                //Java
+                @Override
+                public Dialog onCreateDialog(Bundle savedInstanceState) {
+                
+                    final String[] catNamesArray = {"Васька", "Рыжик", "Мурзик"};
+                    final boolean[] checkedItemsArray = {false, true, false};
+                
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Выберите котов")
+                            .setMultiChoiceItems(catNamesArray, checkedItemsArray,
+                                    new DialogInterface.OnMultiChoiceClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog,
+                                                            int which, boolean isChecked) {
+                                            checkedItemsArray[which] = isChecked;
+                                        }
+                                    })
+                            .setPositiveButton("Готово",
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog,
+                                                            int id) {
+                                            StringBuilder state = new StringBuilder();
+                                            for (int i = 0; i &lt; catNamesArray.length; i++) {
+                                                state.append(catNamesArray[i]);
+                                                if (checkedItemsArray[i])
+                                                    state.append(" выбран\n");
+                                                else
+                                                    state.append(" не выбран\n");
+                                            }
+                                            Toast.makeText(getActivity(),
+                                                    state.toString(), Toast.LENGTH_LONG)
+                                                    .show();
+                                        }
+                                    })
+                
+                            .setNegativeButton("Отмена",
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog,
+                                                            int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                
+                    return builder.create();
+                }
+                </code></pre>
+                
+                <p>Первый параметр в методе <b>setMultiChoiceItems()</b> — массив значений для списка с флажками, второй параметр — булевый массив состояний флажков списка по умолчанию при вызове диалога. Например, мы хотим, чтобы второй элемент списка был отмечен флажком, а остальные элементы нужно оставить неотмеченными. В этом случае используем массив из булевых значений:</p>
+                
+                <pre class="bg-light"><code class="java">
+                final boolean[] checkedItemsArray = {false, true, false};
+                </code></pre>
+                
+                <p>Как и в предыдущем случае с переключателями, для диалогового окна с флажками необходимо использовать кнопки для закрытия окна.</p>
+                
+                <p><img src="image/alertdialog5.png" alt="AlertDialog с флажками">
+                <img src="image/alertdialog6.png" alt="AlertDialog с флажками"></p>
+                
+                <h2 id="autoclose">Автоматическое закрытие окна</h2>
+                
+                <p>В отличие от сообщения Toast, которое закрывается через одну-две секунды, диалоговые окна сами не закрываются, а ждут реакции пользователя. Но если мы воспользуемся таймером, то сможем обойти это ограничение.</p>
+                
+                <p>Добавим в проект кнопку для вызова самозакрывающего диалогового окна и напишем код для обработчика щелчка кнопки (старый пример без использования фрагмента):</p>
+                
+                <pre><code class="java">
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                    builder.setTitle("Автоматическое закрытие окна");
+                    builder.setMessage("Через пять секунд это окно закроется автоматически!");
+                    builder.setCancelable(true);
+                
+                    final AlertDialog dlg = builder.create();
+                
+                    dlg.show();
+                
+                    final Timer timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        public void run() {
+                            dlg.dismiss(); // when the task active then close the dialog
+                            timer.cancel(); // also just top the timer thread, otherwise,
+                                            // you may receive a crash report
+                        }
+                    }, 5000); // через 5 секунд (5000 миллисекунд), the task will be active.
+                }
+                </code></pre>
+                
+                <h2 id="ratingbar">AlertDialog с рейтингом (проблемный пример)</h2>
+                
+                <p>Однажды я повстречал в сети пример включения компонента <b>RatingBar</b> в диалог. При тестировании обнаружил, что код работает не совсем корректно. На экран всегда выводятся шесть звёздочек, несмотря на установленные настройки. А если развернуть приложение в альбомный режим, то выводятся и семь звёздочек и больше, в зависимости от размеров экрана. Оставил пример на память, если кто-то разберётся в чём тут была проблема, то дайте знать. Это тоже старый пример без использования фрагмента.</p>
+                
+                <pre><code class="java">
+                public TextView txtView;
+                
+                public void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    setContentView(R.layout.activity_main);
+                
+                    txtView = findViewById(R.id.textView1);
+                }
+                
+                public void onClick(View v) {
+                    showRatingDialog();
+                }
+                
+                public void showRatingDialog() {
+                    final AlertDialog.Builder ratingdialog = new AlertDialog.Builder(this);
+                    final RatingBar rating = new RatingBar(this);
+                    
+                    ratingdialog.setIcon(android.R.drawable.btn_star_big_on);
+                    ratingdialog.setTitle("Голосуем за любимого кота!");
+                    ratingdialog.setView(rating);
+                    rating.setMax(5);
+                    rating.setNumStars(5);
+                    rating.setStepSize((float) 1.0);
+                
+                    ratingdialog.setPositiveButton("Готово",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    txtView.setText(String.valueOf(rating.getRating()));
+                                    dialog.dismiss();
+                                }
+                            })
+                
+                            .setNegativeButton("Отмена",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                
+                    ratingdialog.create();
+                    ratingdialog.show();
+                }
+                </code></pre>
+                
+                <p><img src="image/alertdialog7.png" alt="AlertDialog с RatingBar"></p>
+                
+                <h3 >Решение проблемы</h3>
+                
+                <p>Читатели предложили несколько вариантов решения проблемы. Как следует из документации, компонент <b>RatingBar</b> следует размещать в макете, который имеет свойство <b>wrap_content</b>. Поступим следующим образом. Создадим отдельную разметку с <b>RatingBar</b>, которую присоединим к диалоговому окну. Итак, разметка:</p>
+                
+                <h3>res/layout/ratingdialog.xml</h3>
+                
+                <pre><code class="xml">
+                &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+                &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+                    android:id=&quot;@+id/linearlayout&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:orientation=&quot;vertical&quot;
+                    android:padding=&quot;2dip&quot; &gt;
+                
+                    &lt;RatingBar
+                        android:id=&quot;@+id/ratingbar&quot;
+                        android:layout_width=&quot;wrap_content&quot;
+                        android:layout_height=&quot;wrap_content&quot;
+                        android:layout_gravity=&quot;center&quot;
+                        android:layout_marginBottom=&quot;10dp&quot;
+                        android:layout_marginTop=&quot;10dp&quot;
+                        android:clickable=&quot;true&quot;
+                        android:isIndicator=&quot;false&quot;
+                        android:numStars=&quot;3&quot;
+                        android:rating=&quot;2&quot;
+                        android:stepSize=&quot;1.0&quot; /&gt;
+                
+                &lt;/LinearLayout&gt;
+                </code></pre>
+                
+                <p>Теперь модифицированный код:</p>
+                
+                <pre><code class="java">
+                public void showRatingDialog() {
+                    
+                    final AlertDialog.Builder ratingdialog = new AlertDialog.Builder(this);
+                    
+                    ratingdialog.setIcon(android.R.drawable.btn_star_big_on);
+                    ratingdialog.setTitle("Голосуем за любимого кота!");
+                
+                    View linearlayout = getLayoutInflater().inflate(R.layout.ratingdialog, null);
+                    ratingdialog.setView(linearlayout); 
+                    
+                    final RatingBar rating = (RatingBar)linearlayout.findViewById(R.id.ratingbar);
+                
+                    ratingdialog.setPositiveButton("Готово",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    txtView.setText(String.valueOf(rating.getRating()));
+                                    dialog.dismiss();
+                                }
+                            })
+                
+                            .setNegativeButton("Отмена",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                
+                    ratingdialog.create();
+                    ratingdialog.show();
+                }
+                </code></pre>
+                
+                <p><img src="image/alertdialog8.png" alt="RatingBar"></p>
+                
+                <p>Обратите внимание, что для доступа к свойствам RatingBar, мы вызываем метод <b>View.findViewById()</b>, а не <b>Activity.findViewById()</b>, как обычно мы привыкли делать в методе <b>onCreate()</b>, когда опускаем название класса.</p>
+                
+                <h2 id="custom_layout">AlertDialog с собственной разметкой</h2>
+                
+                <p>Если стандартный вид <b>AlertDialog</b> вас не устраивает, то можете придумать свою разметку и подключить её через метод <b>setView()</b></p>
+                
+                <pre class="bg-light"><code class="java">
+                // Kotlin
+                override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+                    return activity?.let {
+                        val builder = AlertDialog.Builder(it)
+                        // Get the layout inflater
+                        val inflater = requireActivity().layoutInflater;
+                
+                        // Inflate and set the layout for the dialog
+                        // Pass null as the parent view because its going in the dialog layout
+                        builder.setView(inflater.inflate(R.layout.fragment_custom, null))
+                                // Add action buttons
+                                .setPositiveButton(R.string.signin,
+                                        DialogInterface.OnClickListener { dialog, id ->
+                                            // sign in the user ...
+                                        })
+                                .setNegativeButton(R.string.cancel,
+                                        DialogInterface.OnClickListener { dialog, id ->
+                                            getDialog().cancel()
+                                        })
+                        builder.create()
+                    } ?: throw IllegalStateException("Activity cannot be null")
+                }
+                <hr>
+                // Java
+                @Override
+                public Dialog onCreateDialog(Bundle savedInstanceState) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    LayoutInflater inflater = getActivity().getLayoutInflater();
+                    View view = inflater.inflate(R.layout.fragment_custom, null);
+                    builder.setView(view);
+                    // Остальной код
+                    return builder.create();
+                }
+                </code></pre>
+                
+                <h2 id="callback">Передать данные в активность</h2>
+                
+                <p>Для обработки щелчков кнопок в диалоговом окне вы пишете код, в котором указываете родительскую активность.</p>
+                
+                <pre class="bg-light"><code class="java">
+                package ru.alexanderklimov.testapplication;
+                
+                import android.app.AlertDialog;
+                import android.app.Dialog;
+                import android.content.DialogInterface;
+                import android.os.Bundle;
+                import android.support.v4.app.DialogFragment;
+                
+                public class MyDialogFragment extends DialogFragment {
+                    @NonNull
+                    @Override
+                    public Dialog onCreateDialog(Bundle savedInstanceState) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setMessage("Вы жертвуете миллион коту")
+                                <b>.setIcon(R.drawable.ic_launcher_cat)
+                                .setTitle("Важно! Максимальный перепост")</b>
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        <b>((MainActivity) getActivity()).okClicked();</b>
+                                    }
+                                })
+                                .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        <b>((MainActivity) getActivity()).cancelClicked();</b>
+                                    }
+                                });
+                
+                        return builder.create();
+                    }
+                }
+                </code></pre>
+                
+                <p>В коде каких-то сложностей нет - устанавливаем заголовок, значок, кнопки. При построении диалогового окна указываем родительскую активность и название методов в ней, которые будут отвечать за обработку нажатий кнопок диалога - в нашем случае это методы <b>okClicked()</b> и <b>cancelClicked()</b>. Кстати, имена методов будут подчёркнуты красной линией и среда разработки предложит создать данные методы в классе активности (используйте комбинацию клавиш Alt+Enter).</p>
+                
+                <p>Возвращаемся в код главной активности и пропишем код для нажатий кнопок диалогового окна:</p>
+                
+                <pre class="bg-light"><code class="java">
+                public void okClicked() {
+                    Toast.makeText(getApplicationContext(), "Вы выбрали кнопку OK!",
+                            Toast.LENGTH_LONG).show();
+                }
+                
+                public void cancelClicked() {
+                    Toast.makeText(getApplicationContext(), "Вы выбрали кнопку отмены!",
+                            Toast.LENGTH_LONG).show();
+                }
+                </code></pre>
+                
+                <p><img src="image/dialogfragment1.png" alt="DialogFragment"></p>
+                
+                <p>Пример был написан по принципу - "работает и ладно". На самом деле пример не совсем грамотный, хотя даже в документации он ещё встречается.</p>
+                
+                <p>Правильный вариант рассматривается во второй части о диалоговых окнах <a href="dialogfragment.php">DialogFragment</a>.</p>
+                
+                <h2>Заключение</h2>
+                
+                <p>Вы познакомились с базовыми принципами использования диалоговых окон. В других статьях рассказывается, как использовать продвинутые приёмы для работы с окнами диалога.</p>
+
+
+
+            <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-secondary " href="#">Наверх</a>
+            <a class="btn btn-outline-primary" href="#" tabindex="-1" aria-disabled="true">Следующий урок</a>
+          </nav>
+    
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Видео</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    
+
+    
+    <link href="css/cover.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header>
+
+  <div class="navbar navbar-dark bg-dark  p-3 shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Видеоуроки</strong>
+      </a>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link active"  aria-current="page" href="#">Видеоуроки</a>
+        <a class="nav-link" href="teoria.html">Теория</a>
+        <a class="nav-link" href="test.html">Тест</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<main >
+<div class="fon">
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Видеоуроки</h1>
+        <p class="lead">Здесь видео уроки андроид студио по темам, которые помогут вам эффективно научится работать в нем</p>
+        <p>
+          <a href="#video" class="btn btn-dark my-2">Смотреть</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+  <style>
+    .fon{
+     background: #c7b39b url(image/фон.jpg); /* Цвет фона и путь к файлу */
+     color: #fff; /* Цвет текста */
+     background-size: cover;
+    }
+   </style>
+
+  <div id="video" class="album py-5 bg-dark">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo">
+              <source src="video/УРОК1.mp4" type="video/mp4">
+              <source src="video/УРОК1.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+            
+            <div class="card-body">
+              <p class="card-text">Урок 1. Переход на другой экран<br>Часто приложение
+                 состоит из нескольких экранов. Как переключаться между ними?</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"
+                   onclick="openFullscreen('myvideo');">Смотреть</button>
+                </div>
+                <small class="text-muted">9 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo1">
+              <source src="video/УРОК2.mp4" type="video/mp4">
+              <source src="video/УРОК2.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+              
+            <div class="card-body">
+              <p class="card-text">Урок 2. Передача данных<br> Иногда требуется н
+                е только вызвать новый экран, но и передать в него данные. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"
+                   onclick="openFullscreen('myvideo1');">Смотреть</button>
+
+                </div>
+                <small class="text-muted">9 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo2">
+              <source src="video/УРОК3.mp4" type="video/mp4">
+              <source src="video/УРОК3.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+           
+            <div class="card-body">
+              <p class="card-text">Урок 3. Меню <br>Мы научимся создавать меню для вызова различных команд.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openFullscreen('myvideo2');">Смотреть</button>
+                </div>
+                <small class="text-muted">5 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo4">
+              <source src="video/УРОК4.mp4" type="video/mp4">
+              <source src="video/УРОК4.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+            
+            <div class="card-body">
+              <p class="card-text">Урок 4. PopapMenu<br>Продолжим работу с меню и познакомимся с всплывающим меню.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openFullscreen('myvideo4');">Смотреть</button>
+                  
+                </div>
+                <small class="text-muted">5 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo5">
+              <source src="video/УРОК5.mp4" type="video/mp4">
+              <source src="video/УРОК5.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+          
+            <div class="card-body">
+              <p class="card-text">Урок 5. Диологи<br>Выводим диалоговые окна, чтобы узнать реакцию пользователя.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openFullscreen('myvideo5');">Смотреть</button>
+                  
+                </div>
+                <small class="text-muted">6 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo6">
+              <source src="video/УРОК6.mp4" type="video/mp4">
+              <source src="video/УРОК6.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+            
+            <div class="card-body">
+              <p class="card-text">Урок 6. Фрагменты<br>Создаём модульные компоненты для разных типов экранов.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openFullscreen('myvideo6');">Смотреть</button>
+                  
+                </div>
+                <small class="text-muted">9 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo7">
+              <source src="video/УРОК7.mp4" type="video/mp4">
+              <source src="video/УРОК7.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+            <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="card-text">Урок 7. Секундомер<br>На основе простого приложения "Секундомер" мы лучше узнаем методы жизненного цикла активности.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openFullscreen('myvideo7');">Смотреть</button>
+                 
+                </div>
+                <small class="text-muted">5 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo8">
+              <source src="video/УРОК8.mp4" type="video/mp4">
+              <source src="video/УРОК8.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+            <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="card-text">Урок 8. Викторина<br>Изученных возможностей первого курса будет достаточно для создания простейшей викторины в стиле "Да/Нет".</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openFullscreen('myvideo8');">Смотреть</button>
+                 
+                </div>
+                <small class="text-muted">5 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <video width="100%" height="170" controls id="myvideo9">
+              <source src="video/УРОК9.mp4" type="video/mp4">
+              <source src="video/УРОК9.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+            <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="card-text">Урок 9. JSON<br>В Android есть готовые классы для работы с JSON в пакете json.org: JSONArray, JSONStringer, JSONTokenizer, JSONException.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openFullscreen('myvideo9');">Смотреть</button>
+                  
+                </div>
+                <small class="text-muted">11 мин</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+
+<section class="">
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">УАвиаК-МЦК AndroidStudio</h5>
+
+          <p>
+            Из этого руководства вы узнаете, как настроить и использовать Android Studio для создания базового приложения для Android и как развернуть его на физическом устройстве или эмуляторе Android.
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Теория</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="урок1.html" class="text-white">Урок 1</a>
+            </li>
+            <li>
+              <a href="урок2.html" class="text-white">Урок 2</a>
+            </li>
+            <li>
+              <a href="урок3.html" class="text-white">Урок 3</a>
+            </li>
+            <li>
+              <a href="урок4.html" class="text-white">Урок 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0">Тест</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="test.html" class="text-white">Пройти тест</a>
+            </li>
+            <li>
+              <a href="test.html" class="text-white">По второму уроку</a>
+            </li>
+            <li>
+              <a href="test.html" class="text-white">По третьему уроку</a>
+            </li>
+            <li>
+              <a href="test.html" class="text-white">По четвертому уроку</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      Учебник по
+      <a class="text-white" href="#">"Начальному курсу разработки мобильный приложений"</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</section>
+
+
+
+
+<script src="js/app1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+
+      
+  </body>
+</html>

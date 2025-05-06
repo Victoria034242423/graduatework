@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Теория</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/cover.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Теория</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap" >
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="video.html">Видеоуроки</a>
+        <a class="nav-link active" aria-current="page"  href="#">Теория</a>
+        <a class="nav-link" href="test.html">Тест</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="overflow-x: hidden;">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="teoria.html">
+              <span data-feather="home"></span>
+              Главная
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок1.html">
+              <span data-feather="file-text"></span>
+              Урок 1. Hello Kitty!
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок2.html">
+              <span data-feather="file-text"></span>
+              Урок 2. Щелчок кнопки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок3.html">
+              <span data-feather="file-text"></span>
+              Урок 3. Уведомления
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок4.html">
+              <span data-feather="file-text"></span>
+              Урок 4. Смена цветов
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  active" href="#">
+              <span data-feather="file-text"></span>
+              Урок 5. На другой экран
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок6.html">
+              <span data-feather="file-text"></span>
+              Урок 6. Темы и стили
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="урок7.html">
+              <span data-feather="file-text"></span>
+              Урок 7. AlertDialog
+            </a>
+          </li>
+
+        </ul>
+
+
+      </div>
+    </nav>
+    
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+        <h2>Переключение между экранами приложения</h2>
+    
+        <hr>
+        <div class="row">
+            <div class="col-md-10">
+              
+
+                <h2>Простое переключение на другой экран</h2>
+                <p>Приложение не всегда состоит из одного экрана. Например, мы создали очень полезную программу и пользователю хочется узнать, кто же её автор. Он нажимает на кнопку «О программе» и попадает на новый экран, где находится полезная информация о версии программы, авторе, адресе сайта, сколько у автора котов и т.д. Воспринимайте экран активности как веб-страницу с ссылкой на другую страницу. Если вы посмотрите на код в файле <b>MainActivity</b> из прошлых уроков, то увидите, что наш класс <b>MainActivity</b> тоже относится к <b>Activity</b> (или его наследникам) или, если говорить точнее, наследуется от него.</p>
+
+<pre class="bg-light"><code>
+class MainActivity : Activity()
+</code></pre>
+
+<p>Как нетрудно догадаться, нам следует создать новый класс, который может быть похож на <b>MainActivity</b> и затем как-то переключиться на него при нажатии кнопки.</p>
+
+<p>Для эксперимента мы возьмём программу из первого урока и будем использовать для опытов кнопку (или создайте новый проект с одной кнопкой на экране). Далее создадим новую форму для отображения полезной информации. Например, покажем пользователю, что делает кот, когда идёт налево и направо. Согласитесь, это очень важная информация, дающая ключ к разгадке Вселенной.</p>
+
+<p>Создавать новую активность будем вручную, хотя в студии есть готовые шаблоны. Но там ничего сложного и для лучшего понимания полезно всё делать руками.</p>
+
+<p>Создадим новый XML-файл разметки <b>activity_about.xml</b> в папке <b>res/layout</b>. Щёлкните правой кнопкой мыши на папке <b>layout</b> и выберите из контекстного меню <b>New | Layout resource file</b>. Появится диалоговое окно. В первом поле вводим имя файла <b>activity_about</b>. Во втором нужно ввести корневой элемент. По умолчанию там стоит <b>ConstraintLayout</b>. Стираем текст и вводим <b>ScrollView</b>. Ввода нескольких символов достаточно, чтобы студия подсказала готовые варианты, можно сразу нажать <kbd>Enter</kbd>, не дожидаясь полного ввода слова:</p>
+
+<p><img src="image/t16.png"></p>
+
+<p>Получится соответствующая заготовка, в которую вставим элемент <b>TextView</b>.</p>
+
+<pre class="bg-light"><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;ScrollView 
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textview_about_content&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;@string/about_text&quot;/&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+
+<p>Информация будет извлекаться из ресурсов, а именно из строкового ресурса <b>about_text</b>. Сейчас он подсвечен красным цветом, сигнализируя об отсутствии информации. Можно было нажать <b>Alt+Enter</b> и ввести текст в диалоговом окне. Но для нашего примера этот способ не подойдёт, так как наш текст будет многострочным, с использованием управляющих символов. Поэтому поступим по-другому. Откроем файл <b>res/values/strings.xml</b> и вводим следующий текст вручную:</p>
+
+<pre class="bg-light"><code class="xml">
+&lt;string name=&quot;about_text&quot;&gt;
+    У лукоморья дуб зелёный;\\n
+    Златая цепь на дубе том:\\n
+    И днём и ночью &lt;b&gt;кот учёный&lt;/b&gt;\\n
+    Всё ходит по цепи кругом;\\n
+    Идёт &lt;b&gt;направо&lt;/b&gt; - песнь заводит,\\n
+    &lt;b&gt;Налево&lt;/b&gt; - сказку говорит.&lt;/string&gt;
+</code></pre>
+
+<p>Мы использовали простейшие HTML-теги форматирования текста типа &lt;b&gt;, &lt;i&gt;, &lt;u&gt;. Для нашего примера достаточно выделить жирным слова, которые относятся к коту и направлению движения. Для перевода текста на новую строку используйте символы <b>\\n</b>. Добавим ещё один строковый ресурс для заголовка нового экрана:</p>
+
+<pre class="bg-light"><code class="xml">
+&lt;string name=&quot;about_title&quot;&gt;О программе&lt;/string&gt;
+</code></pre>
+
+<p>С разметкой разобрались. Далее необходимо создать класс для окна <b>AboutActivity</b>. Выбираем из контекстного меню вашего пакета в папке <b>java</b> меню <b>New | Kotlin Class/File</b>, в диалоговом окне указываем имя класса, а в выпадающем списке выбираем <b>Class</b>.</p>
+
+<p><img src="image/t17.png" alt="New Kotlin Class"></p>
+
+<p>Получим заготовку класса. Сейчас класс пустой, добавим код вручную. Класс должен наследоваться от абстрактного класса <b>Activity</b> или его родственников типа <b>FragmentActivity</b>, <b>AppCompatActivity</b> и т.д. Дописываем <b>: Activity()</b>. У класса активности должен быть метод <b>onCreate()</b>. Ставим курсор мыши внутри класса и выбираем в меню <b>Code | Override Methods</b> (Ctrl+O). В диалоговом окне ищем нужный класс, можно набирать на клавиатуре первые символы для быстрого поиска. Можно поступить проще - просто набирать имя метода внутри класса, студия сама покажет через автодополнение нужный вариант и создаст шаблон метода.</p>
+
+<p>В созданном методе нужно вызвать метод <b>setContentView()</b>, который подгрузит на экран подготовленную разметку. У нас получится такой вариант.</p>
+
+<pre class="bg-light"><code>
+package ru.alexanderklimov.another
+
+import android.app.Activity
+import android.os.Bundle
+
+class AboutActivity : Activity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_about)
+    }
+}
+</code></pre>
+
+<p>Раньше студия подчёркивала жёлтым цветом слово <b>AboutActivity</b> и предупреждала, что следует создать запись в манифесте. Сейчас предупреждение отсутствует, поэтому попросите рядом сидящего кота напомнить об этом.  Подводим мышь к названию класса, нажимаем <kbd>Alt</kbd>+<kbd>Enter</kbd> и в контекстом меню выбираем пункт <b>Add activity to manifest</b>. В манифесте будет сделана соответствующая запись, мы позже к ней вернёмся.</p>
+
+<p>Теперь начинается самое главное. Наша задача - перейти на новый экран при щелчку кнопки на первом экране. Переходим обратно к классу <b>MainActivity</b>. Напишем обработчик щелчка кнопки:</p>
+
+<pre class="bg-light"><code>
+button.setOnClickListener {
+    val intent = Intent(<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c1804051f2c210d05022d0f18051a051815">[email&#160;protected]</a>, AboutActivity::class.java)
+    startActivity(intent)
+}
+</code></pre>
+
+<p>Для запуска нового экрана необходимо создать экземпляр класса <b>Intent</b> и указать в первом параметре текущий класс, а во втором - класс для перехода, у нас это <b>AboutActivity</b>. После этого вызывается метод <b>startActivity()</b>, который и запускает новый экран.</p>
+
+<p>Откройте файл манифеста <b>AndroidManifest.xml</b> и посмотрите на его код. Там была добавлена одна строка после нашего предыдущих действий с классом <b>AboutActivity</b>:</p>
+ 
+<pre class="bg-light"><code>
+&lt;activity android:name=&quot;.AboutActivity&quot; /&gt;
+</code></pre>
+
+<p>Добавим ещё одну строку кода.</p>
+
+<pre class="bg-light"><code class="xml">
+&lt;activity
+    android:name=&quot;.AboutActivity&quot;
+    android:label=&quot;@string/about_title&quot; /&gt;
+</code></pre>
+
+<p>Вот и пригодился строковый ресурс <b>about_title</b>. При желании вы можете добавить и другие настройки для активности, например, тему. Запускаем приложение, щёлкаем на кнопке и получаем окно <b>О программе</b>. Таким образом мы научились создавать новое окно и вызывать его по щелчку кнопки. А в нашем распоряжении появилась мегаудобная  программа - теперь всегда под рукой будет подсказка, что делает кот, когда идёт налево.</p>
+
+<p><img src="image/t18.png" alt=""></p>
+
+<p>Ещё раз обращаю внимание, что второй создаваемый класс активности должен наследоваться от класса <b>Activity</b> или ему похожих (<b>ListActivity</b> и др.), иметь XML-файл разметки (если требуется) и быть прописан в манифесте.</p>
+
+<p>После вызова метода <b>startActivity()</b> запустится новая активность (в данном случае <b>AboutActivity</b>), она станет видимой и переместится на вершину стека, содержащего работающие компоненты. При вызове метода <b>finish()</b> из новой активности (или при нажатии аппаратной клавиши возврата "Back") она будет закрыта и удалена из стека. Разработчик также может перемещаться к предыдущей (или к любой другой) активности, используя всё тот же метод <b>startActivity()</b>.</p>
+
+<p>Если хотим добавить стрелку в заголовок второй активности для возврата на родительскую активность, то пропишем в манифесте необходимые данные.</p>
+
+<pre class="bg-light"><code>
+&lt;activity
+    android:name=&quot;.AboutActivity&quot;
+    android:parentActivityName=&quot;.MainActivity&quot;
+    android:theme=&quot;@android:style/Theme.Holo.Light.DarkActionBar&quot;&gt;
+    &lt;meta-data
+        android:name=&quot;android.support.PARENT_ACTIVITY&quot;
+        android:value=&quot;.MainActivity&quot; /&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<p>В этом случае нам даже не придётся добавлять свою кнопку на экран второй активности и писать код, система сама всё сделает за нас. В примере использовалась устаревшая тема <b>Holo</b>, можете попробовать прописать другие темы.</p>
+
+<h2>Создаём третий экран - способ для ленивых</h2>
+
+<p>Программисты, как и коты, существа ленивые. Постоянно помнить, что для активности нужно создать разметку и класс, который наследуется от <b>Activity</b>, а затем не забыть прописать класс в манифесте - да ну нафиг.</p>
+
+<p>В этом случае выберите из контекстного меню пакета выберите <b>New | Activity | Basic Activity</b> (или другой шаблон). Дальше появится знакомое вам окно создания новой активности. Заполняем необходимые поля.</p>
+
+<p><img src="image/t19.png" class="img-fluid" alt="New Activity"></p>
+
+<p>Нажимаем на кнопку <b>Finish</b> и активность будет готова. Чтобы убедиться в этом, откройте файл манифеста и проверьте наличие новой записи. Про файлы класса и разметки я уже не говорю, они сами появятся перед вами.</p>
+
+<p>Самостоятельно добавьте новую кнопку на экране главной активности и напишите код для перехода на созданную активность.</p>
+
+<p>На первых порах я бы посоветовал вам вручную создавать все необходимые компоненты для новой активности, чтобы понимать взаимосвязь между классом, разметкой и манифестом. А когда набьёте руку, то можете использовать мастер создания активности для ускорения работы.</p>
+
+<h2>Передача данных между активностями</h2>
+
+<p>Мы использовали простейший пример для вызова другого экрана активности. Иногда требуется не только вызвать новый экран, но и передать в него данные. Например, имя кота. В этом случае нужно задействовать специальную область <b>extraData</b>, который имеется у класса <b>Intent</b>.</p>
+
+<p>Область <b>extraData</b> - это список пар <b>ключ/значение</b>, который передаётся вместе с намерением. В качестве ключей используются строки, а для значений можно использовать любые примитивные типы данных, массивы примитивов, объекты класса <b>Bundle</b> и др.</p>
+
+<p>Для передачи данных в другую активность используется метод <b>putExtra()</b>:</p>
+
+<pre class="bg-light">
+intent.putExtra("Ключ", "Значение")
+</pre>
+
+<p>Принимающая активность должна вызвать какой-нибудь подходящий метод: <b>getIntExtra()</b>, <b>getStringExtra()</b> и т.д.:</p>
+
+<pre class="bg-light">
+int count = getIntent().getIntExtra("name", 0)
+</pre>
+
+<p>Переделаем предыдущий пример. У нас уже есть три активности. У первой активности разместим два текстовых поля и кнопку. Внешний вид может быть следующим:</p>
+
+<p><img src="https://developer.alexanderklimov.ru/android/images/activity12.png" alt="Передача данных"></p>
+
+<p>У второй активности <b>SecondActivity</b> установим элемент <b>TextView</b>, в котором будем выводить текст, полученный от первой активности. Напишем следующий код для метода <b>onCreate()</b> у второй активности.</p>
+
+<pre class="bg-light"><code>
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_second)
+
+    val user = "ЖЫвотное"
+    val gift = "дырку от бублика"
+
+    textview_second_info.text = user + " , вам передали " + gift
+}
+</code></pre>
+
+<p>Если сейчас запустить программу и просто вызвать второе окно, как это было описано в первой части статьи, то мы увидим надпись по умолчанию <b>ЖЫвотное, вам передали дырку от бублика</b>. Согласитесь, довольно обидно получать такие сообщения.</p>
+
+<p>Исправляем ситуацию. Добавляем код у первой активности:</p>
+
+<pre class="bg-light"><code>
+button.setOnClickListener {
+    val intent = Intent(<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="47332f2e34070a262e290624332e312e333e">[email&#160;protected]</a>, SecondActivity::class.java)
+    // в ключ username пихаем текст из первого текстового поля
+    intent.putExtra("username", edit_address.text.toString())
+    // в ключ gift пихаем текст из второго текстового поля
+    intent.putExtra("gift", edit_gift.text.toString())
+    startActivity(intent)
+}
+</code></pre>
+
+<p>Мы поместили в специальный контейнер объекта <b>Intent</b> два ключа со значениями, которые берутся из текстовых полей. Когда пользователь введёт данные в текстовые поля, они попадут в этот контейнер и будут переданы второй активности.</p>
+
+<p><img src="https://developer.alexanderklimov.ru/android/images/activity13.png" alt="Передача данных"></p>
+
+<p>Вторая активность должна быть готова к тёплому приёму сообщений следующим образом (выделено жирным).</p>
+
+<pre class="bg-light"><code>
+// Значения по умолчанию
+var user = "ЖЫвотное"
+var gift = "дырку от бублика"
+
+<b>
+user = intent.extras.getString("username")
+gift = intent.extras.getString("gift")
+</b>
+
+textview_second_info.text = "$user , вам передали $gift"
+</code></pre>
+
+<p>Теперь сообщение выглядит не столь обидным, а даже приятным для кое-кого. В сложных примерах желательно добавить проверку при обработке данных. К счастью, Kotlin хорошо справляется с данными типа <b>null</b> и предохраняет от краха приложения, но проверить на пустую строку не помешает, чтобы сообщить пользователю о необходимости заполнить поля.</p>
+
+<p><img src="https://developer.alexanderklimov.ru/android/images/activity14.png" alt="Приём данных"></p>
+
+<p>Если клавиатура поддерживает эмодзи, то их тоже можно использовать.</p>
+
+<p><img src="image/t20.png" class="img-fluid" alt="Intent Extra"></p>
+
+<p>В нашем случае мы знаем, что ждём строковое значение, поэтому код можно переписать так:</p>
+
+<pre class="bg-light"><code>
+user = intent.getStringExtra("username")
+</code></pre>
+
+<p>У программы есть недостаток - не понятно, от кого мы получаем приветы. Любая хорошо воспитанная мартышка не возьмёт подарок от анонимного источника. Поэтому в качестве домашнего задания добавьте ещё одно текстовое поле для ввода имени пользователя, который отправляет сообщение.</p>
+
+<p><img src="https://developer.alexanderklimov.ru/android/images/privet.jpg" alt="Привет для мартышки"></p>
+
+<p>Google рекомендует для ключей использовать следующий формат: имя вашего пакета в качестве префикса, а затем сам ключ. В этом случае можно быть уверенным в уникальности ключа при взаимодействии с другими приложениями. Приблизительно так:</p>
+
+<pre class="bg-light"><code>
+companion object {
+   const val USER = "ru.alexanderklimov.myapp.USER"
+}
+</code></pre>
+
+<h2>Кто подставил кота Ваську - получаем результат обратно</h2>
+
+<p>Не всегда бывает достаточно просто передать данные другой активности. Иногда требуется получить информацию обратно от другой активности при её закрытии. Если раньше мы использовали метод <b>startActivity(Intent intent)</b>, то существует родственный ему метод <b>startActivityForResult(Intent intent, int RequestCode)</b>. Разница между методами заключается в дополнительном параметре <b>RequestCode</b>. По сути это просто целое число, которое вы можете сами придумать. Оно нужно для того, чтобы различать от кого пришёл результат. Допустим у вас есть пять дополнительных экранов и вы присваиваете им значения от 1 до 5, и по этому коду вы сможете определить, чей результат вам нужно обрабатывать. Вы можете использовать значение -1, тогда это будет равносильно вызову метода <b>startActivity()</b>, т.е. никакого результата не получим.</p>
+
+<p>Если вы используете метод <b>startActivityForResult()</b>, то вам необходимо переопределить в коде метод для приёма результата <b>onActivityResult()</b> и обработать полученный результат. Запутались? Давайте разберём пример.</p>
+
+<p>Предположим, вы сыщик. Поступила информация, что в ресторане со стола влиятельного человека украли два кусочка колбасы и другие продукты. Подозрение пало на трёх подозреваемых - ворона, сраный пёсик и кот Васька.</p>
+
+<p>Один из посетителей предоставил серию фотографий со своего понтового айфона:</p>
+
+<p><img src="image/activity7.jpg" alt="Кот ворует колбаску"> 
+</p>
+
+<p>Также имеются показания другого свидетеля: <i>А Васька слушает, да ест</i>.</p>
+
+<p>Создаём новый проект <b>Sherlock</b> с двумя активностями. На первом экране будет кнопка для переключения на второй экран и текстовая метка, в которой будет отображено имя воришки.</p>
+
+<pre class="bg-light"><code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/imageView&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:adjustViewBounds=&quot;true&quot;
+        android:scaleType=&quot;fitStart&quot;
+        android:src=&quot;@drawable/sherlock&quot;
+        app:layout_constraintStart_toStartOf=&quot;parent&quot;
+        app:layout_constraintTop_toTopOf=&quot;parent&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textview_label&quot;
+        android:layout_width=&quot;0dp&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginEnd=&quot;8dp&quot;
+        android:layout_marginStart=&quot;8dp&quot;
+        android:layout_marginTop=&quot;8dp&quot;
+        android:text=&quot;@string/who&quot;
+        android:textAppearance=&quot;@android:style/TextAppearance.DeviceDefault&quot;
+        app:layout_constraintEnd_toEndOf=&quot;parent&quot;
+        app:layout_constraintHorizontal_bias=&quot;0.5&quot;
+        app:layout_constraintStart_toStartOf=&quot;parent&quot;
+        app:layout_constraintTop_toBottomOf=&quot;@+id/imageView&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textview_into&quot;
+        android:layout_width=&quot;0dp&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginEnd=&quot;8dp&quot;
+        android:layout_marginStart=&quot;8dp&quot;
+        android:layout_marginTop=&quot;8dp&quot;
+        android:textAppearance=&quot;@android:style/TextAppearance.DeviceDefault.Large&quot;
+        app:layout_constraintEnd_toEndOf=&quot;parent&quot;
+        app:layout_constraintHorizontal_bias=&quot;0.5&quot;
+        app:layout_constraintStart_toStartOf=&quot;parent&quot;
+        app:layout_constraintTop_toBottomOf=&quot;@+id/textview_label&quot; /&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/button_choose&quot;
+        style=&quot;@android:style/Widget.Holo.Light.Button&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginBottom=&quot;8dp&quot;
+        android:layout_marginTop=&quot;8dp&quot;
+        android:text=&quot;Сделать выбор&quot;
+        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
+        app:layout_constraintEnd_toEndOf=&quot;parent&quot;
+        app:layout_constraintHorizontal_bias=&quot;0.501&quot;
+        app:layout_constraintStart_toStartOf=&quot;parent&quot;
+        app:layout_constraintTop_toBottomOf=&quot;@+id/textview_into&quot;
+        app:layout_constraintVertical_bias=&quot;0.033&quot; /&gt;
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+</code></pre>
+
+<p>На втором экране будет группа переключателей:</p>
+
+<pre class="bg-light"><code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout 
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;10dp&quot;&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textView&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Выберите правильный ответ&quot;
+        android:textAppearance=&quot;?android:attr/textAppearanceMedium&quot; /&gt;
+
+    &lt;RadioGroup
+        android:id=&quot;@+id/radioGroup&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radio_crow&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:checked=&quot;false&quot;
+            android:text=&quot;Ворона&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radio_dog&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;Сраный пёсик&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radio_cat&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;Кот Васька&quot; /&gt;
+
+    &lt;/RadioGroup&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Так как мы будем ожидать ответ из второго экрана, то нам необходимо задействовать метод <b>startActivityForResult()</b> на первом экране, в котором мы передадим переменную <b>REQUEST_CHOOSE_THIEF</b> в качестве параметра <b>RequestCode</b>.</p>
+
+<pre class="bg-light"><code>
+companion object{
+    const val REQUEST_CHOOSE_THIEF = 0
+}
+
+button_choose.setOnClickListener {
+    val questionIntent = Intent(<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="384c50514b7875595156795b4c514e514c41">[email&#160;protected]</a>,
+            SecondActivity::class.java)
+    startActivityForResult(questionIntent, REQUEST_CHOOSE_THIEF)
+}
+</code></pre>
+
+<p>При щелчке на кнопке мы запускаем вторую активность с ожиданием результата.</p>
+
+<p>Переходим на второй экран и будем писать код для второй активности.</p>
+
+<pre class="bg-light"><code>
+package ru.alexanderklimov.sherlock
+
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
+import android.widget.RadioGroup
+
+const val THIEF = "ru.alexanderklimov.sherlock.THIEF"
+
+class SecondActivity : Activity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+		
+        setContentView(R.layout.activity_second)
+		
+		val radioGroup : RadioGroup = findViewById(R.id.radioGroup)
+
+        radioGroup.setOnCheckedChangeListener { _, optionId ->
+            val answerIntent = Intent()
+            when (optionId) {
+                R.id.radio_dog -> answerIntent.putExtra(THIEF, "Сраный пёсик")
+                R.id.radio_crow -> answerIntent.putExtra(THIEF, "Ворона")
+                R.id.radio_cat -> answerIntent.putExtra(THIEF, "Лошадь Пржевальского")
+            }
+
+            setResult(RESULT_OK, answerIntent)
+            finish()
+        }
+    }
+}
+</code></pre>
+
+<p>Здесь всё просто, когда сыщик выбирает имя преступника, то через метод <b>putExtra()</b> мы передаём имя ключа и его значение.</p>
+
+<p>Для удобства, после выбора мы сразу закрываем второе окно и перед закрытием передаём значение <b>RESULT_OK</b>, чтобы было понятно, что выбор сделан. Если пользователь закроет экран через кнопку <b>Back</b>, то будет передано значение <b>RESULT_CANCELED</b>.</p>
+
+<p>Метод <b>setResult()</b> принимает два параметра: результирующий код и сам результат, представленный в виде намерения. Результирующий код говорит о том, с каким результатом завершилась работа активности, как правило, это либо <b>Activity.RESULT_OK</b>, либо <b>Activity.RESULT_CANCELED</b>. В некоторых случаях нужно использовать собственный код возврата для обработки специфических для вашего приложения вариантов. Метод <b>setResult()</b> поддерживает любое целочисленное значение.</p>
+
+<p>Если вы будете передавать данные явно через кнопку, то неплохо бы добавить метод <b>finish()</b>, чтобы закрыть вторую активность за ненадобностью. Если переход происходит через кнопку <b>Back/Назад</b>, то это делать не обязательно.</p>
+
+<p>Если активность была закрыта пользователем при нажатии аппаратной кнопки возврата или если метод <b>finish()</b> был вызван раньше, чем метод <b>setResult()</b>, результирующий код установится в <b>RESULT_CANCELED</b>, а возвращённое намерение покажет значение <b>null</b>.</p>
+
+<p>Возвращаемся на первый экран. Первый экран ожидает ответа от второго экрана, поэтому нужно добавить в код метод <b>onActivityResult()</b>.</p>
+
+<pre class="bg-light"><code>
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+
+    if (requestCode == REQUEST_CHOOSE_THIEF) {
+        if (resultCode == Activity.RESULT_OK) {
+            val thiefName = data?.getStringExtra(THIEF)
+            textview_info.text = thiefName
+        } else {
+            textview_info.text = "" // стираем текст
+        }
+    }
+}
+</code></pre>
+
+<p>Позже я переписал пример ближе к Kotlin-стилю.</p>
+
+<pre class="bg-light"><code>
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+
+    if (resultCode == Activity.RESULT_OK) {
+        when (requestCode) {
+            REQUEST_CHOOSE_THIEF -> {
+                val thiefName = data?.getStringExtra(THIEF)
+                textview_info.text = thiefName.toString()
+            }
+            // Другие запросы
+       //   REQUEST_MULTIPLE_PERMISSION -> {
+       //       // Do something if success / failed
+       //   }
+        }
+    } else{
+        textview_info = "" // стираем текст
+    }
+}
+</code></pre>
+
+<p>Метод ожидает входящие данные с кодом запроса <b>REQUEST_CHOOSE_THIEF</b>, и если такие данные поступят, то извлекает значение из ключа <b>THIEF</b> с помощью метода <b>getStringExtra</b>. Полученное значение мы выводим в <b>TextView</b>. Если мы вернулись на экран через кнопку <b>Back</b>, то просто стираем текст.</p>
+
+<p>При закрытии дочерней активности внутри родительского компонента срабатывает обработчик <b>onActivityResult()</b>.</p>
+
+<p>Обработчик <b>onActivityResult()</b> принимает несколько параметров.</p>
+
+<ul>
+<li>Код запроса. Код, который использовался для запуска активности, возвращающей результат</li>
+<li>Результирующий код. Код результата, устанавливаемый дочерней активностью и указывающий, как завершилась её работа. Это может быть любое целочисленное значение, но, как правило, либо <b>Activity.RESULT_OK</b>, либо <b>Activity.RESULT_CANCELED</b></li>
+<li>Данные. Намерение, используемое для упаковки возвращаемых данных. В зависимости от назначения дочерней активности оно может включать путь URI, представляющий выбранную часть содержимого. В качестве альтернативы (или дополнения) дочерняя активность может возвращать информацию в виде простых значений, упакованных в параметр намерения <b>extras</b></li>
+</ul>
+
+<div class="alert alert-warning">
+Если работа дочерней активности завершилась непредвиденно или если перед её закрытием не был указан код результата, этот параметр станет равен <b>Activity.RESULT_CANCELED</b>.
+</div>
+
+<p>Запускаем проект, нажимаем на кнопку и переходим на второй экран. Там выбираем один из вариантов. Если выбрать ворону, то экран закроется и имя преступника отобразится на первом экране. Если выбрать пёсика, то отобразится его имя.</p>
+
+<p><img src="image/startactivity4.png" alt="Кот ворует колбаску"> <img src="image/startactivity5.png" alt="Кот ворует колбаску"> <img src="image/startactivity6.png" alt="Кот ворует колбаску"></p>
+
+<p>Между прочим, если выбрать котика, то его имя не отобразится! Проверьте и убедитесь сами. Вы спросите почему? Элементарно, Ватсон! Преступник не учёл одной важной детали. В ресторане велось наблюдение с видеокамер, и запись показала, кто на самом деле украл колбаску и подставил кота. Васька, держись!</p>
+
+<p><img src="http://rusproject.narod.ru/android/podstava.gif" alt="Подставили кота"></p>
+
+<p>P.S. Если поначалу что-то показалось непонятным, то с практикой многое прояснится. Передача данных между экранами часто встречается в приложениях и вы ещё не раз изучите пример.</p>
+
+<p>P.P.S. Лучшая рыба - колбаса. Зная эту слабость, нетрудно было подставить кота.</p>
+
+<p><img src="image/activity8.jpg" alt="Кот на рыбалке"></p>
+
+<p>Относительно недавно Google объявила методы <b>startActivityForResult()/onActivityResult()</b> устаревшими, студия теперь перечёркивает их названия. Новый способ описан в другой статье, но пока вы можете без проблем использовать старый проверенный способ.</p>
+
+
+
+
+
+            <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-secondary " href="#">Наверх</a>
+            <a class="btn btn-outline-primary" href="урок6.html" tabindex="-1" aria-disabled="true">Следующий урок</a>
+          </nav>
+    
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="js/dashboard.js"></script>
+  </body>
+</html>

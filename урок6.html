@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Теория</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/cover.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Теория</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap" >
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="video.html">Видеоуроки</a>
+        <a class="nav-link active" aria-current="page"  href="#">Теория</a>
+        <a class="nav-link" href="test.html">Тест</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="overflow-x: hidden;">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="teoria.html">
+              <span data-feather="home"></span>
+              Главная
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок1.html">
+              <span data-feather="file-text"></span>
+              Урок 1. Hello Kitty!
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок2.html">
+              <span data-feather="file-text"></span>
+              Урок 2. Щелчок кнопки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок3.html">
+              <span data-feather="file-text"></span>
+              Урок 3. Уведомления
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок4.html">
+              <span data-feather="file-text"></span>
+              Урок 4. Смена цветов
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="урок5.html">
+              <span data-feather="file-text"></span>
+              Урок 5. На другой экран
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="file-text"></span>
+              Урок 6. Темы и стили
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="урок7.html">
+              <span data-feather="file-text"></span>
+              Урок 7. AlertDialog
+            </a>
+          </li>
+
+     
+ 
+        </ul>
+      </div>
+    </nav>
+    
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+        <h2>Темы и стили</h2>
+        <p>
+            <a href="#common">Общая информация</a><br>
+            <a href="#styles">Стили</a><br>
+            <a href="#parent">Наследование стилей</a><br>
+            <a href="#themes">Тема</a><br>
+            <a href="#dialog">Темы для диалоговых окон</a><br>
+            <a href="#editor">Theme Editor</a><br>
+            </p>
+        <hr>
+        <div class="row">
+            <div class="col-md-10">
+              
+
+                <h2  id="common">Общая информация</h2>
+
+                <p>Чтобы наше приложение было стильным, можно воспользоваться специальной темой. Тема - это коллекция стилей, которые обеспечивают профессиональный вид приложению, чтобы оно было похоже на родные приложения Android. Сама система Android уже имеет несколько предустановленных тем, которыми можно воспользоваться в своих целях. Вам достаточно только указать имя темы в манифесте.</p>
+                
+                <p>Впредыдущем примере мы учились переключаться на другой экран, чтобы увидеть новое окно <b>О программе</b>. Сделаем это окно диалоговым, чтобы оно не занимало весь экран.</p>
+                
+                <p>Откройте снова файл манифеста <b>AndroidManifest.xml</b> из прошлого урока и измените строчку для активности <b>AboutActivity</b>, указав тему.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;activity android:name=&quot;.About&quot;
+                    android:label=&quot;@string/about_title&quot;
+                    android:theme="@style/Theme.AppCompat.Dialog";&gt;
+                &lt;/activity&gt;
+                </code></pre>
+                
+                <p>Запустив программу, вы увидите, что внешний вид окна «О программе» стал уже другим. Сравните.</p>
+                
+                <p><img src="image/activity1.png"width="240" height="400" alt=""> <img src="image/theme1.png" alt="Dialog theme" width="225" height="400"></p>
+                
+                <p>Обратите внимание, что теперь появляется не окно во весь экран, а диалоговое окно в центре экрана. При этом остальная часть экрана затемняется.</p>
+                
+                <p>Похожие темы: <b>android:theme="@style/Theme.AppCompat.Light.Dialog"</b>, <b>android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth"</b>, <b>android:theme="@style/Theme.AppCompat.Dialog.MinWidth"</b>.</p>
+                
+                <p>Тему можно применить не только к отдельной активности, но и ко всем активностям приложения, если прописать в теге <b>application</b>.</p>
+                
+                <p>Кстати, вы можете разработать свою тему на основе существующих и сохранить ее в файле <b>res/values/styles.xml</b>.</p>
+                
+                <p>Стили и темы — это такие же ресурсы, как и строки, изображения и т. д. Android обеспечивает некоторые заданные по умолчанию стили и темы, которые вы можете использовать в приложениях. При необходимости вы  можете определить свой собственный стиль и тему для создаваемого приложения.</p>
+                
+                <h2 id="styles">Стили</h2>
+                
+                <p>Стиль — это один или несколько сгруппированных атрибутов форматирования, которые отвечают за внешний вид и поведение элементов или окна. Стиль может задавать такие свойства, как ширину, отступы, цвет текста, размер шрифта, цвет фона и так далее. Сами стили хранятся в XML-файлах, отдельно от файлов разметки.</p>
+                
+                <p>Подобное разделение напоминает использование каскадных стилей CSS для веб-документов, которые также отвечают за стили HTML-элементов и хранятся в отдельных файлах.</p>
+                
+                <p>Предположим, у нас есть следующий код разметки для <b>TextView</b>:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;TextView
+                    android:layout_width=&quot;match_parent&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:textColor=&quot;#00FF00&quot;
+                    android:typeface=&quot;monospace&quot;
+                    android:textSize=&quot;18sp&quot;
+                    android:text=&quot;@string/hello&quot; /&gt;
+                </code></pre>
+                
+                <p>Мы можем вынести все свойства в файл стилей следующим образом:</p>
+                
+                <h3 class="text-success">res/values/styles.xml</h3>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+                &lt;resources&gt; 
+                    &lt;style name=&quot;MyTextStyle&quot; parent=&quot;@style/Text&quot;&gt; 
+                        &lt;item name=&quot;android:textSize&quot;&gt;18sp&lt;/item&gt; 
+                        &lt;item name=&quot;android:textColor&quot;&gt;#00FF00&lt;/item&gt; 
+                        &lt;item name=&quot;android:typeface&quot;&gt;monospace&lt;/item&gt;
+                    &lt;/style&gt; 
+                &lt;/resources&gt; 
+                </code></pre>
+                
+                <p>Тогда в файле разметки теперь будет так:</p>
+                <pre class="bg-light"><code class="xml">
+                &lt;TextView
+                    style=&quot;@style/MyTextStyle&quot;
+                    ...
+                    android:text=&quot;@string/hello&quot; /&gt;
+                </code></pre>
+                
+                <p>Как видите, мы удалили все свойства для текста из файла разметки и разместили их в файле стилей в ресурсе под именем <b>MyTextStyle</b>, который содержит теперь все необходимые свойства.</p>
+                
+                <p>Создать файл со стилями несложно. Создаем новый XML-файл в папке <b>res/values/</b> вашего проекта. Имя файла не имеет значения, главное, чтобы расширение было XML, а сам файл находился в указанной папке. В проекте, создаваемом студией, уже есть готовый файл <b>res/values/styles.xml</b>, в который вы можете добавить новые стили. А также вы можете создать свой отдельный файл стилей.</p>
+                
+                <p>Корневым узлом файла должен быть элемент <b>&lt;resources&gt;</b>. Для каждого элемента, которому требуется стиль, нужно добавить элемент <b>&lt;style&gt;</b> с уникальным именем. Далее создаются элементы <b>&lt;item&gt;</b> для каждого свойства и присваиваются им имена, которые отвечают за выбранное свойство. Значением элемента &lt;item&gt; должно выступать ключевое слово, цвет в шестнадцатеричном значении, ссылка на другой тип ресурсов или другое значение в зависимости от свойства стиля. Ниже представлен образец такого стиля:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+                &lt;resources&gt;
+                    &lt;style name=&quot;MyTextStyle&quot; parent=&quot;@android:style/TextAppearance.Medium&quot;&gt;
+                        &lt;item name=&quot;android:layout_width&quot;&gt;match_parent&lt;/item&gt;
+                        &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+                        &lt;item name=&quot;android:textColor&quot;&gt;#00FF00&lt;/item&gt;
+                        &lt;item name=&quot;android:typeface&quot;&gt;monospace&lt;/item&gt;
+                    &lt;/style&gt;
+                &lt;/resources&gt;
+                </code></pre>
+                
+                <p>Во время компиляции все свойства из файла стилей будут извлечены и применены к элементам.</p>
+                
+                <p>Атрибут <b>parent</b> для элемента <b>style</b> является необязательным и позволяет задавать идентификатор ресурса другого стиля, из которого нужно наследовать свойства. При этом вы можете переопределить свойства в случае необходимости.</p>
+                
+                <h3 >Быстрое создание стилей через Android Studio</h3>
+                
+                <p>Если вы решили вынести некоторые свойства компонентов в стили, то необязательно это делать вручную. В студии есть удобный инструмент для быстрого создания ресурсов стилей.</p>
+                
+                <p>В текстовом режиме щёлкните правой кнопкой мыши на нужном компоненте и в контекстном меню выбирайте пункт <b>Refactor | Extract | Style</b>. Далее укажите имя стиля и выберите требуемые параметры для экспорта. Студия самостоятельно создаст стиль в файле <b>styles.xml</b> и автоматически применит созданный ресурс в layout-файле.</p>
+                
+                <h2 id="parent">Наследование стилей</h2>
+                
+                <p>Наследование - мощный и полезный механизм, позволяющий не изобретать велосипед, а использовать готовые проверенные наработки. С помощью атрибута <b>parent</b> в элементе <b>style</b> вы можете наследовать нужные свойства из существующих стилей, а также переопределить некоторые свойства или добавить свои дополнительные свойства. Предположим, мы решили наследоваться от существующего системного стиля Android для текстовых сообщений и слегка модифицировать его.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;GreenText&quot; parent=&quot;@android:style/TextAppearance&quot;&gt;
+                    &lt;item name=&quot;android:textColor&quot;&gt;#00FF00&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Если вы собираетесь наследоваться от собственных стилей, то использовать атрибут <b>parent</b> не нужно. Просто используйте префикс имени наследуемого стиля перед создаваемым новым стилем, разделяя имена стилей точкой. Например, для создания нового стиля, который наследуется от стиля <b>MyTextStyle</b>, созданного нами ранее, где мы хотим получить красный текст, используйте следующий способ:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;MyTextStyle.Red&quot;&gt;
+                    &lt;item name=&quot;android:textColor&quot;&gt;#FF0000&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Как видите, нам не пришлось использовать атрибут <b>parent</b> в теге <b>style</b>, потому что имя стиля начинается с имени <b>MyTextStyle</b> (созданный нами стиль). Теперь наш стиль наследует все свойства от стиля родителя, при этом мы изменили одно свойство <b>android:textColor</b>, чтобы текст выводился красным цветом. Вы можете ссылаться на новый стиль через конструкцию <b>@style/MyTextStyle.Red</b>.</p>
+                
+                <p>Вы можете продолжать наследоваться дальше много раз, добавляя новые имена через точку. Допустим, мы хотим расширить свойство <b>MyTextStyle.Red</b>, чтобы текст выводился более крупным шрифтом:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;MyTextStyle.Red.Big&quot;&gt;
+                    &lt;item name=&quot;android:textSize&quot;&gt;30sp&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Итак, мы наследовались от стилей <b>MyTextStyle</b> и <b>MyTextStyle.Red</b>, а затем добавили новое свойство <b>android:textSize</b>.</p>
+                
+                <p>Не забывайте, что данная техника наследования применима только к собственным стилям. Для наследования системных стилей типа <b>TextAppearance</b> необходимо использовать атрибут <b>parent</b>.</p>
+                
+                <h2 >Свойства стиля</h2>
+                
+                <p>Разобравшись с созданием стилей, рассмотрим различные свойства, определяемые в элементе <b>item</b>. Мы уже встречались с такими свойствами, как <b>layout_width</b> и <b>textColor</b>. На самом деле свойств гораздо больше.</p>
+                
+                <p>Для поиска свойств, которые применимы к заданному <b>View</b>, можно обратиться к документации и просмотреть все поддерживаемые свойства.  Так все атрибуты, перечисленные в таблице атрибутов класса <b>TextView</b> могут быть использованы для элементов <b>TextView</b> или <b>EditText</b>. Например, у данных элементов есть свойство <b>android:inputType</b>:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;EditText
+                    android:inputType=&quot;number&quot;
+                    ... /&gt;
+                </code></pre>
+                
+                <p>Но вместо этого мы можем также создать стиль для элемента <b>EditText</b>, который будет включать в себя данное свойство:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;Numbers&quot;&gt;
+                  &lt;item name=&quot;android:inputType&quot;&gt;number&lt;/item&gt;
+                  ...
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>В файле разметки теперь можно написать так:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;EditText
+                    style=&quot;@style/Numbers&quot;
+                    ... /&gt;
+                </code></pre>
+                
+                <p>На первый взгляд вам возможно покажется, что подобный подход отнимает слишком много времени. Но в больших проектах повторное использование стиля поможет вам сэкономить и время и силы.</p>
+                
+                <p>Для просмотра всех существующих стилей вы можете посмотреть исходники Android. Найдите папку, в которую вы устанавливали Android SDK, там можно найти нужные исходники. Например, у меня путь к исходникам стилей Android API 17 выглядит следующим образом: <i>D:\Android\android-sdk-windows\platforms\android-17\data\res\values\styles.xml</i>. Помните, что все объекты <b>View</b> не поддерживает сразу все существующие атрибуты, поэтому используйте только специфичные стили для выбранного элемента. Но если вы по ошибке зададите ошибочный стиль для <b>View</b>, то это не вызовет краха приложения. Элемент <b>View</b> будет использовать только подходящие свойства и игнорировать чужие для него свойства.</p>
+                
+                <p>Существуют также свойства, которые не поддерживаются ни одним элементом <b>View</b> и применимы только как тема. Подобные стили действуют сразу на всё окно, а не на отдельный элемент. Например, есть тема, скрывающая заголовок приложения, строку состояния или изменяющая фон окна. Подобные стили легко определить по слову <b>window</b>, с которого начинается название стиля: <b>windowNoTitle</b>, <b>windowBackground</b> (о них ниже).</p>
+                
+                <p>Не забывайте использовать префикс <b>android</b> перед именем в каждом элементе <b>item</b>: &lt;item name=&quot;android:inputType&quot;&gt;.</p>
+                
+                <p>Отдельно стоит отметить создание стиля для кнопки. У кнопки есть несколько состояний - обычное, в фокусе, нажатое, нажатое с фокусом. Поэтому для кнопки нужно создать четыре отдельных стиля, чтобы кнопка выглядела профессионально.</p>
+                
+                <h2 >Извлечение свойств в стили</h2>
+                
+                <p>Если вы решили в своём проекте использовать стили и вам нужно быстро переместить нужные атрибуты, то Android Studio предлагает быстрый механизм для этой операции. В текстовом режиме ставите курсор на названии компонента, например, <b>ImageView</b>, затем щёлкаете правой кнопкой мыши и выбираете <b>Refactor | Extract | Style...</b>. В диалоговом окне выбираете нужные атрибуты для переноса в стили и выбираете имя стиля.</p>
+                
+                <h2 >Динамическое изменение стилей</h2>
+                
+                <p>Ни разу не приходилось пользоваться, но вдруг пригодится.</p>
+                
+                <pre class="bg-light"><code class="java">
+                Context themedContext = new ContextThemeWrapper(baseContext, R.style.MyTheme);
+                
+                // in LayoutInflater
+                View view = LayoutInflater.from(themedContext)
+                        .inflate(R.layout.mylayout, null);
+                
+                // in constructor
+                View view = new View(themedContext);
+                </code></pre>
+                
+                <h2 id="themes">Тема</h2>
+                
+                <p>Тема - это более ёмкое понятие. По существу, тема - стиль, который относится ко всему экрану активности или приложению, а не к отдельному компоненту приложения. Таким образом, тема имеет свои атрибуты и свою область применения.</p>
+                
+                <p>Темы похожи на определения стилей. Точно так же, как стили, темы объявляются в XML-файле элементами &lt;style&gt;, и ссылаются на них тем же самым способом. Различие состоит в том, что тема добавляется ко всему приложению или к отдельной активности через элементы &lt;application&gt; и &lt;activity&gt; в файле манифеста приложения, т. к. темы не могут быть применены к отдельным компонентам.</p>
+                
+                <p>Чтобы установить тему, откройте файл <b>AndroidManifest.xml</b> и отредактируйте тег <b>&lt;application&gt;</b>, чтобы он включал в себя атрибут <b>android:theme</b> с указанием имени стиля:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;application android:theme=&quot;@style/CustomTheme&quot;&gt;
+                </code></pre>
+                
+                <p>Если вы хотите, чтобы тема относилась не ко всему приложению, а к отдельной активности, то атрибут <b>android:theme</b> нужно добавить в тег <b>&lt;activity&gt;</b>.</p>
+                
+                <p>Во многих случаях нет необходимости придумывать свои стили и темы, так как Android содержит множество собственных встроенных тем. Например, вы можете использовать тему <b>Dialog</b>, чтобы окно приложения выглядело как диалоговое окно (Смотри выше).</p>
+                
+                <p>Если вам нравится тема, но несколько свойств всё-таки хотите подправить под себя, то просто добавьте тему как родительскую тему к своей теме. Например, мы хотим модифицировать стандартную тему <b>Theme.Light</b>, чтобы использовать свои цвета.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;color name=&quot;custom_theme_color&quot;&gt;#b0b0ff&lt;/color&gt;
+                &lt;style name=&quot;CustomTheme&quot; parent=&quot;android:Theme.Light&quot;&gt;
+                    &lt;item name=&quot;android:windowBackground&quot;&gt;@color/custom_theme_color&lt;/item&gt;
+                    &lt;item name=&quot;android:colorBackground&quot;&gt;@color/custom_theme_color&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Теперь мы можем использовать свой стиль вместо <b>Theme.Light</b> в манифесте:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;activity android:theme=&quot;@style/CustomTheme&quot;&gt;
+                </code></pre>
+                
+                <p>Небольшой список свойств, которые используются для настройки собственных тем.</p>
+                
+                <ul>
+                <li><b>android:windowNoTitle</b>: используйте значение <b>true</b>, чтобы скрыть заголовок</li>
+                <li><b>android:windowFullscreen</b>: используйте значение <b>true</b>, чтобы скрыть строку состояния и освободить место для приложения</li>
+                <li><b>android:windowBackground</b>: ресурс цвета или <b>drawable</b> для фона</li>
+                <li><b>android:windowContentOverlay</b>: <b>Drawable</b>, который рисуется поверх содержимого окна. По умолчанию, это тень от строки состояния. Можно использовать <b>null</b> (<b>@null</b> в XML-файле) для удаления ресурса.</li>
+                </ul>
+                
+                <p>В Android 5.0 появились новые темы, которые получили название Material Design.</p>
+                
+                <ul>
+                <li><b>@android:style/Theme.Material</b> (тёмная версия)</li>
+                <li><b>@android:style/Theme.Material.Light</b> (светлая версия)</li>
+                <li><b>@android:style/Theme.Material.Light.DarkActionBar</b> (светлая версия с тёмным заголовком)</li>
+                </ul>
+                
+                <p>В Android 9.0 темы Material Design продолжили развитие, они будут активно внедряться в ближайшее время.</p>
+                
+                <ul>
+                    <li>Theme.MaterialComponents</li>
+                    <li>Theme.MaterialComponents.NoActionBar</li>
+                    <li>Theme.MaterialComponents.Light</li>
+                    <li>Theme.MaterialComponents.Light.NoActionBar</li>
+                    <li>Theme.MaterialComponents.Light.DarkActionBar</li>
+                </ul>
+                
+                <p>Для Material Design были разработаны новые атрибуты тем.</p>
+                
+                <ul>
+                <li><b>android:colorPrimary</b>: основной цвет для интерфейса программы - панель, кнопки и т.д.</li>
+                <li><b>android:colorPrimaryDark</b>: цвет для системных элементов - строка состояния</li>
+                <li><b>android:colorAccent</b>: Цвет по умолчанию для компонентов, которые находятся в фокусе или активны</li>
+                <li><b>android:colorControlNormal</b>: Цвет для неактивных компонентов</li>
+                <li><b>android:colorControlActivated</b>: Цвет для активных компонентов</li>
+                <li><b>android:colorControlHighlight</b>: Цвет для нажатых элементов интерфейса</li>
+                <li><b>colorSwitchThumbNormal</b>: и т.д. изучаем документацию</li>
+                </ul>
+                
+                <p>Позже были добавлены другие атрибуты: <b>colorPrimaryVariant</b>, <b>colorOnPrimary</b>, <b>colorSecondary</b>, <b>colorSecondaryVariant</b>, <b>colorOnSecondary</b>, <b>colorError</b>, <b>colorOnError</b>, <b>colorSurface</b>, <b>colorOnSurface</b>, <b>colorBackground</b>, <b>colorOnBackground</b>.</p>
+                
+                <p><img src="image/material31.png"></p>
+                
+                <p>Настройка цветов происходит по определённым правилам. На сайте http://www.google.com/design/spec/style/color.html#
+                есть таблица цветов. Обратите внимание на числа слева. Основным цветом (colorPrimary) считается цвет под номером <b>500</b>, он идёт первым в таблицах. Этот цвет должен использоваться в качестве заголовка (<b>Toolbar</b>).</p>
+                
+                <p>Допустим, мы делаем специальное приложение для рыжего кота. Создадим новый файл <b>res/values/colors.xml</b>. На указанном сайте находим таблицу цветов оранжевого цвета <b>Orange</b> и будем использовать предлагаемое значение.</p>
+                
+                <p>Зададим основной цвет.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;color name=&quot;primaryColor&quot;&gt;#FF9800&lt;/color&gt;
+                </code></pre>
+                
+                <p>Для строки состояние, которая находится выше заголовка приложения, нужно использовать цвет со значением <b>700</b> (colorPrimaryDark). Это более тёмный цвет и позволяет различать заголовок приложения и строку состояния. Возвращаемся к оранжевой таблице цветов, запоминаем значение цвета и прописываем его в ресурсах.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;color name=&quot;primaryColorDark&quot;&gt;#F57C00&lt;/color&gt;
+                </code></pre>
+                
+                <p>Пропишем в теме приложения новые элементы.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;resources&gt;
+                
+                    &lt;!-- Base application theme. --&gt;
+                    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
+                        &lt;!-- Customize your theme here. --&gt;
+                        &lt;item name=&quot;colorPrimary&quot;&gt;@color/primaryColor&lt;/item&gt;
+                        &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/primaryColorDark&lt;/item&gt;
+                    &lt;/style&gt;
+                
+                &lt;/resources&gt;
+                </code></pre>
+                
+                <p>На старых устройствах цвет строки состояния не изменяется. Цвет заголовка поменять можно.</p>
+                
+                <p><img src="image/material3.png" alt="Material"></p>
+                
+                <p>В файле <b>res/values-v21/styles.xml</b> для новых устройств нужно повторить указанные действия с небольшой поправкой. В API 21 уже есть предопределённые константы для эти цветов, поэтому используем в именах <b>android:colorPrimary</b> и <b>android:colorPrimaryDark</b>.</p>
+                
+                <p>В одной из недавних версий библиотеки совместимости была реализована поддержка нового дизайна для всех устройст и такое разделение сейчас не является обязательным.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+                &lt;resources&gt;
+                    &lt;style name=&quot;AppTheme&quot; parent=&quot;android:Theme.Material.Light&quot;&gt;
+                        &lt;item name=&quot;android:colorPrimary&quot;&gt;@color/primaryColor&lt;/item&gt;
+                        &lt;item name=&quot;android:colorPrimaryDark&quot;&gt;@color/primaryColorDark&lt;/item&gt;
+                    &lt;/style&gt;
+                &lt;/resources&gt;
+                </code></pre>
+                
+                <p>С главным цветом есть одна тонкость. Старые устройства используют <b>ActionBar</b> и его цвет подчиняется правилам Material Design из коробки. На новых устройствах для активности используется тема без панели действий <b>Theme.AppCompat.NoActionBar</b> и вручную добавляется компонент <b>Toolbar</b>. Чтобы он использовал основной цвет, используйте правильный стиль для фонового цвета.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;android.support.v7.widget.Toolbar
+                    android:layout_width=&quot;match_parent&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:background=&quot;?attr/colorPrimary&quot; /&gt;
+                </code></pre>
+                
+                <p>Третий важный цвет для использования в приложениях - акцентированный. Данный цвет может использоваться для кнопки <b>Floating Action Button</b> и для различных компонентов. Он должен быть достаточно контрастным по сравнению с основным цветом. Для примера выберем зелёный цвет по цвету глаз рыжих котов. Находим в таблице зелёный цвет и выбираем нужное значение из <b>A400</b></p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;color name=&quot;accentColor&quot;&gt;#00E676&lt;/color&gt;
+                </code></pre>
+                
+                <p>Прописываем цвет в обоих темах:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;item name=&quot;colorAccent&quot;&gt;@color/accentColor&lt;/item&gt;
+                
+                &lt;item name=&quot;android:colorAccent&quot;&gt;@color/accentColor&lt;/item&gt;
+                </code></pre>
+                
+                <p>Сейчас акцентированный цвет мы нигде не увидим. Вернёмся к нему позже.</p>
+                
+                <p>Акцентированные цвета поддерживаются многими компонентами из коробки. Для некоторых следует использовать аналоги из библиотеки AppCompat:</p>
+                
+                <ul>
+                <li>Флажки и переключатели</li>
+                <li>SwitchCompat вместо Switch</li>
+                <li>Курсор у EditText</li>
+                <li>Текст у TextInputLayout</li>
+                <li>Текущий индикатор у TabLayout</li>
+                <li>Выбранный элемент у NavigationView</li>
+                <li>Фон у FloatingActionButton</li>
+                </ul>
+                
+                <p>Пользуйтесь сервисом <a href="http://www.materialpalette.com/deep-orange/light-green">Material Design Color Palette Generator</a> для создания палитры в стиле Material: выбираем основной цвет, цвет «плавающей» кнопки и сайт генерирует необходимую палитру.</p>
+                
+                <p>В Android 5.0 появился новый атрибут темы <b>colorEdgeEffect</b>. Вам необходимо переопределить тему, а затем применить к компоненту.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                <b>res/values/themes.xml</b>
+                
+                &lt;style name=&quot;RedThemeOverlay&quot; parent=&quot;android:ThemeOverlay.Material&quot;&gt;
+                    &lt;item name=&quot;android:colorEdgeEffect&quot;&gt;#FF0000&lt;/item&gt;
+                &lt;/style&gt;
+                res/layout/fragment_list.xml
+                
+                &lt;ListView
+                    ...
+                    android:theme=&quot;RedThemeOverlay&quot; /&gt;
+                </code></pre>
+                
+                <h2  id="dialog">Темы для диалоговых окон</h2>
+                
+                <p>По умолчанию, диалоговые окна на Lollipop-устройствах будут выглядеть в стиле Material Design. Но если вы хотите немного изменить внешний вид, то можно применить стили и темы к ним. Создайте отдельный стиль:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;AlertDialogCustom&quot; parent=&quot;Theme.AppCompat.Light.Dialog&quot;&gt;
+                    &lt;item name=&quot;colorAccent&quot;&gt;@color/primary&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Добавьте созданный стиль к теме.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
+                    &lt;item name=&quot;colorPrimary&quot;&gt;@color/primary&lt;/item&gt;
+                    &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/primary_dark&lt;/item&gt;
+                    &lt;item name=&quot;colorAccent&quot;&gt;@color/accent&lt;/item&gt;
+                    &lt;item name=&quot;android:alertDialogTheme&quot;&gt;@style/AlertDialogCustom&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Также можно создать отдельный стиль для негативной кнопки, чтобы она была красной и отличалась от позитивной кнопки.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;AlertDialogCustom.Destructive&quot;&gt;
+                    &lt;item name=&quot;android:buttonBarPositiveButtonStyle&quot;&gt;@style/DestructiveButton&lt;/item&gt;
+                &lt;/style&gt;
+                 
+                &lt;style name=&quot;DestructiveButton&quot;
+                        parent=&quot;android:Widget.DeviceDefault.Button.Borderless&quot;&gt;
+                    &lt;item name=&quot;android:textColor&quot;&gt;@color/red&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Затем в коде используете созданный стиль.</p>
+                
+                <pre class="bg-light"><code class="java">
+                AlertDialog alertDialog = new AlertDialog.Builder(
+                        getActivity(), 
+                        <b>R.style.AlertDialogCustom_Destructive</b>)
+                        .setPositiveButton(R.string.button_delete, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                // Delete Action
+                            }
+                        })
+                        .setNegativeButton(R.string.button_cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                 // Cancel Action
+                            }
+                        })
+                        .setTitle(R.string.title_delete_item)
+                        .create();
+                </code></pre>
+                
+                <p>Сам пока не проверял.</p>
+                
+                <h2 >Темы для диалоговых окон для старых устройств</h2>
+                
+                <p>В библиотеке совместимости версии 22.1.0 появилась поддержка Material Design для диалоговых окон.</p>
+                
+                <p>Для начала вызовем диалоговое окно стандартным способом:</p>
+                
+                <pre class="bg-light"><code class="java">
+                import android.app.AlertDialog;
+                
+                public void onClick(View view) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setTitle("Dialog");
+                    builder.setMessage("Покормить кота?");
+                    builder.setPositiveButton("OK", null);
+                    builder.setNegativeButton("Cancel", null);
+                    builder.show();
+                }
+                </code></pre>
+                
+                <p><img src="image/material32.png"></p>
+                
+                <p>Добавим стили в файл <b>styles.xml</b>:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;AppCompatAlertDialogStyle&quot; parent=&quot;Theme.AppCompat.Light.Dialog.Alert&quot;&gt;
+                    &lt;item name=&quot;colorAccent&quot;&gt;#FFCC00&lt;/item&gt;
+                    &lt;item name=&quot;android:textColorPrimary&quot;&gt;#FFFFFF&lt;/item&gt;
+                    &lt;item name=&quot;android:background&quot;&gt;#5fa3d0&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Для вывода диалогового окна будем использовать класс из библиотеки совместимости, у которого есть дополнительный параметр для указания темы.</p>
+                
+                <pre class="bg-light"><code class="java">
+                import android.support.v7.app.AlertDialog;
+                
+                public void onClick(View view) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this, <b>R.style.AppCompatAlertDialogStyle</b>);
+                    builder.setTitle("Dialog");
+                    builder.setMessage("Покормить кота?");
+                    builder.setPositiveButton("OK", null);
+                    builder.setNegativeButton("Cancel", null);
+                    builder.show();
+                }
+                </code></pre>
+                
+                <p><p><img src="image/material33.png"></p>
+                
+                <p>Если хотите также поменять цвет для заголовка диалогового окно, то добавьте в предыдущую тему <b>AppCompatAlertDialogStyle</b> новый элемент <b>windowTitleStyle</b> и создайте стиль для него.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;item name=&quot;android:windowTitleStyle&quot;&gt;@style/TitleDialogTextStyle&lt;/item&gt;
+                
+                &lt;style name=&quot;TitleDialogTextStyle&quot;&gt;
+                    &lt;item name=&quot;android:textColor&quot;&gt;#d71616&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p><p><img src="image/material34.png"></p>
+                
+                <h2 >Стили для компонентов</h2>
+                
+                <p>У компонентов также появились новые стили, связанные с Material Design. Например, <b>TextAppearance.Material.Title</b>:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;TextView
+                    android:layout_width=&quot;match_parent&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:textAppearance=&quot;@android:style/TextAppearance.Material.Title&quot;
+                    android:id=&quot;@+id/textView&quot;
+                    android:text=&quot;Текст в стиле Title&quot; /&gt;
+                </code></pre>
+                
+                <h2 >Темы для компонентов</h2>
+                
+                <p>Обычно темы применялись к активности или приложению. Сейчас самый распространённый вариант <b>Theme.AppCompat</b>.</p>
+                
+                <p>В Lollipop и AppCompat с версии 22.1 стало возможным присваивать тему отдельному компоненту. В этой связи появился отдельный тип темы <b>ThemeOverlay</b>, который позволяет менять только необходимые настройки. Например, <b>ThemeOverlay.AppCompat.Light</b> меняет фоновый цвет, цвет текста и выделенный текст, как если это была бы светлая тема. Соответственно, <b>ThemeOverlay.AppCompat.Dark</b> работает как тёмная тема.</p>
+                
+                <p>Это может пригодится, чтобы цвет текста не совпадал с цветом фона и был читаемым. Например, это часто используется у <b>Toolbar</b>:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;android.support.v7.widget.Toolbar
+                  android:layout_width=&quot;match_parent&quot;
+                  android:layout_height=&quot;wrap_content&quot;
+                  android:background=&quot;?attr/colorPrimary&quot;
+                  android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot; /&gt;
+                </code></pre>
+                
+                <p>Также используется при создании собственных тем</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;ThemeOverlay.AccentSecondary&quot;
+                       parent=&quot;ThemeOverlay.AppCompat&quot;&gt;
+                  &lt;item name="colorAccent"&gt;@color/accent_secondary&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <h3 class="text-warning">Выбор темы в зависимости от версии платформы</h3>
+                
+                <p>Каждая новая версия Android обзаводится несколькими новыми темами. И, возможно, вам захочется использовать новые темы в своих приложениях, чтобы пользователи новых аппаратов увидели современный интерфейс, при этом владельцы старых аппаратов будут видеть приложение в другом виде.</p>
+                
+                <p>Предположим у вас есть собственная тема, использующая стандартную светлую тему, в файле <b>res/values/styles.xml</b>:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;LightThemeSelector&quot; parent=&quot;android:Theme.Light&quot;&gt;
+                    ...
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Чтобы задействовать также новую голографическую тему, доступную в Android 3.0 (API Level 11) и выше, создайте альтернативный файл стилей в папке <b>res/values-v11</b>, где будет указана новая тема:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;LightThemeSelector&quot; parent=&quot;android:Theme.Holo.Light&quot;&gt;
+                    ...
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Для последней версии Android 5.0 вам понадобится папка <b>res/values-21</b> для темы, использующую Material Design.</p>
+                
+                <p>Теперь программа автоматически будет переключаться между стилями, самостоятельно определяя версию Android.</p>
+                
+                <p>Список стандартных атрибутов, используемых в темах, можно найти на странице <noindex><a href="https://developer.android.com/reference/android/R.styleable.html#Theme">R.styleable.Theme</a></noindex>.</p>
+                
+                <h2 >Использование стилей и тем платформы</h2>
+                
+                <p>Вы можете создавать собственные стили, а можете подключать готовые системные стили или отдельные атрибуты стилей, используемых в Android. Для указания стиля, предопределённого в Android, используется следующий синтаксис:</p>
+                
+                <pre class="bg-light"><code class="java">
+                style="@android:style/TextAppearance
+                </code></pre>
+                
+                <p>Если вам нужно выбрать только отдельную часть стиля, то используйте знак вопроса:</p>
+                
+                <pre class="bg-light"><code class="java">
+                &lt;EditText
+                    id=&quot;@+id/edit&quot;
+                    android:textColor:=&quot;?android:textColorSecondary&quot; /&gt;
+                </code></pre>
+                
+                <p>Знак <b>?</b> применяется для поиска значения стиля в текущей теме, а подстрока ?android означает поиск значения стиля в системной теме Android.</p>
+                
+                <p>В студии можно выбрать системную тему сразу из среды разработки. Откройте файл разметки в режиме <b>Design</b>. Чуть выше формы имеется выпадающая кнопка <b>AppTheme</b>. Нажмите на неё и поиграйтесь со списком, чтобы просмотреть другие варианты. Вы сможете увидеть, как будет выглядеть ваше приложение в разных темах. Учтите, что эта настройка не вносит изменения в ваш файл, а предназначена только для просмотра темы, чтобы вы представляли, как будет выглядеть программа у разных пользователей.</p>
+                
+                <p>В последних версиях проектов студии, которые используют тему <b>AppCompat</b> для создания полноэкранной активности используйте стиль:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;Theme.AppCompat.Light.NoActionBar.FullScreen&quot; parent=&quot;Theme.AppCompat.Light&quot;&gt;
+                    &lt;item name=&quot;windowNoTitle&quot;&gt;true&lt;/item&gt;
+                    &lt;item name=&quot;windowActionBar&quot;&gt;false&lt;/item&gt;
+                    &lt;item name=&quot;android:windowFullscreen&quot;&gt;true&lt;/item&gt;
+                    &lt;item name=&quot;android:windowContentOverlay&quot;&gt;@null&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>И примените его к нужной активности.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;activity
+                    android:name=&quot;.MainActivity&quot;
+                    android:theme=&quot;@style/Theme.AppCompat.Light.NoActionBar.FullScreen&quot;&gt;
+                </code></pre>
+                
+                <h2  id="kitkat">Новые темы в Android 4.4</h2>
+                
+                <p>В Android 4.4 появилась возможность сделать панель навигации и строку состояния полупрозрачными. Откройте файл <b>styles.xml</b> и добавьте строчки:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;!-- Application theme. --&gt;
+                &lt;style name=&quot;AppTheme&quot; parent=&quot;AppBaseTheme&quot;&gt;
+                
+                    &lt;!-- All customizations that are NOT specific to a particular API-level can go here. --&gt;
+                    &lt;item name=&quot;android:windowTranslucentStatus&quot;&gt;true&lt;/item&gt;
+                    &lt;item name=&quot;android:windowTranslucentNavigation&quot;&gt;true&lt;/item&gt;
+                    &lt;item name=&quot;android:fitsSystemWindows&quot;&gt;true&lt;/item&gt;
+                    &lt;!--  &lt;item name=&quot;android:actionBarStyle&quot;&gt;@style/ActionBar.Solid.GreenStyle&lt;/item&gt; --&gt;
+                &lt;/style&gt;
+                
+                
+                &lt;style name=&quot;ActionBar.Solid.GreenStyle&quot; parent=&quot;@android:style/Widget.Holo.Light.ActionBar.Solid&quot;&gt;
+                    &lt;item name=&quot;android:background&quot;&gt;@android:color/holo_green_dark&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Последний пункт у меня закомментирован. Он позволяет настроить тему для <b>ActionBar</b>. Можете поиграться с ним. Для сравнения ниже представлены скриншоты стандартного окна активности с чёрными полосками снизу и сверху и стилизованной активности. Для наглядности я выбрал оранжевый цвет для фона активности.</p>
+                
+                <p><img src="image/theme7.png" alt="Theme in Kitkat" width="240" height="400"> <img src="image/theme8.png" alt="Theme in Kitkat" width="240" height="400"></p>
+                
+                <p>Если говорить об эволюции тем и стилей, то в Android 2.x темы были в зачаточном состоянии. В Android 3/4 дизайнеры проделали огромную работу, чтобы система стала красивой и предложили тему Holo. В новой версии Android 5.0 работа над стилями была продолжена и была представлена новая концепция стиля под названием Material Design с подробной документацией по её использованию.</p>
+                
+                <p>В статье <a href="http://cyrilmottier.com/2013/01/23/android-app-launching-made-gorgeous/" >Android App Launching Made Gorgeous</a> рассматривается интересный случай, когда неправильное использование тем приводит к некрасивому эффекту - сначала загружается пустой экран, а затем уже экран вашей активности.</p>
+                
+                <h2 >Темы для View</h2>
+                
+                <p>В статье говорилось, что отдельные компоненты должны использовать стили, а активности - темы. В Android 5.0 Lollipop, а также старые устройства с API 11 через библиотеку совместимости AppCompat могут также использовать темы:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;Toolbar
+                    android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot;
+                    app:popupTheme=&quot;@style/ThemeOverlay.AppCompat.Light&quot; /&gt;
+                </code></pre>
+                
+                <p>Небольшой список на память.</p>
+                
+                <ul>
+                <li>ThemeOverlay.AppCompat</li>
+                <li>ThemeOverlay.AppCompat.Light</li>
+                <li>ThemeOverlay.AppCompat.Dark</li>
+                <li>ThemeOverlay.AppCompat.ActionBar</li>
+                <li>ThemeOverlay.AppCompat.Dark.ActionBar</li>
+                </ul>
+                
+                <p>Например, ваши компоненты в разметке используют светлую тему, а родительский элемент должен использовать тёмную тему. Тогда применим к нему готовую тему.</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;FrameLayout
+                    android:background="@color/dark_background"
+                    <b>android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark&quot;</b>&gt;
+                  &lt;TextView /&gt;
+                &lt;/FrameLayout&gt;
+                </code></pre>
+                
+                <p>Если вам нужно изменить конкретный атрибут, например, <b>colorAccent</b>, то добавьте новую тему:</p>
+                
+                <pre class="bg-light"><code class="xml">
+                &lt;style name=&quot;CustomAccentOverlay&quot; parent=&quot;ThemeOverlay.AppCompat&quot;&gt;
+                   &lt;item name=&quot;colorAccent&quot;&gt;@color/custom_accent&lt;/item&gt;
+                &lt;/style&gt;
+                </code></pre>
+                
+                <p>Примените тему к вашему компоненту через <b>android:theme="CustomAccentOverlay"</b>. Так вы можете переопределить и другие атрибуты.</p>
+                
+                <h2 >Общие советы</h2>
+                
+                <p>Избегайте конкретных значений для цвета.</p>
+                
+                <pre class="bg-light"><code>
+                &lt;View …
+                    android:background=&quot;@color/white&quot;/&gt;
+                </code></pre>
+                
+                <p>Лучше используйте атрибуты, что позволит вам корректно переключаться к тёмной теме.</p>
+                
+                <pre class="bg-light"><code>
+                &lt;View …
+                    android:background=&quot;?attr/colorSurface&quot;/&gt;
+                </code></pre>
+                
+                <p>В некоторых ситуациях использование готовых значений цвета оправдано.</p>
+                
+                <p>При работе с элементами темы программным способом не используйте <b>Context</b> от <b>Application</b>, только от <b>Activity</b>.</p>
+
+
+
+
+
+            <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-secondary " href="#">Наверх</a>
+            <a class="btn btn-outline-primary" href="урок7.html" tabindex="-1" aria-disabled="true">Следующий урок</a>
+          </nav>
+    
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="js/dashboard.js"></script>
+  </body>
+</html>

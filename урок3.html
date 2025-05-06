@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Теория</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/cover.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Теория</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap" >
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="video.html">Видеоуроки</a>
+        <a class="nav-link active" aria-current="page"  href="#">Теория</a>
+        <a class="nav-link" href="test.html">Тест</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="overflow-x: hidden;">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="teoria.html">
+              <span data-feather="home"></span>
+              Главная
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок1.html">
+              <span data-feather="file-text"></span>
+              Урок 1. Hello Kitty!
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок2.html">
+              <span data-feather="file-text"></span>
+              Урок 2. Щелчок кнопки
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="file-text"></span>
+              Урок 3. Уведомления
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок4.html">
+              <span data-feather="file-text"></span>
+              Урок 4. Смена цветов
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок5.html">
+              <span data-feather="file-text"></span>
+              Урок 5. На другой экран
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="урок6.html">
+              <span data-feather="file-text"></span>
+              Урок 6. Темы и стили
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="урок7.html">
+              <span data-feather="file-text"></span>
+              Урок 7. AlertDialog
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+    
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+        <h2>Уведомления</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-10">
+    <h2 id="intro">Вступление</h2>
+
+<p>Кроме Toast-уведомлений</a>, существует также другой тип уведомлений, который выводится за пределами вашего приложения, а именно, в верхней части телефона в системной строке состояния в виде значка с небольшим текстом.</p>
+
+<p>Далее пользователь должен сдвинуть строку состояния экрана, чтобы увидеть расширенную информацию об уведомлении - текст, картинку. Также можно прямо в уведомлении сделать какое-то действие - написать ответ, поставить на паузу музыку и т.п. Для привлечения внимания к уведомлению можно подключить звук и вибрацию.</p>
+
+<p>Уведомление может висеть в строке состояние сколь угодно долго, пока сам пока пользователь не отреагирует на него, в отличие от Toast-сообщения, которое исчезнет через несколько секунд. В Android 5.0 добавилась возможность выводить уведомление в виде отдельного небольшого всплывающего окна (если устройство не заблокировано). В особых случаях уведомление можно выводить и на экран блокировки.</p>
+
+<p>Пользователь может в настройках вашего приложения отключить уведомления в любой момент. Поэтому не стоит спамить пользователя ненужными сообщениями. Также нелишним будет проводить проверку, что уведомление будет выведено на экран.</p>
+
+<p>Обратите внимание, что в имени класса спрятан кот (Notifi<b>cat</b>ion), что намекает на целевое использование уведомлений. Уведомляйте пользователя только о самом важном, например, что пора кормить кота.</p>
+
+<img src="image/teoria22.png" class="img-fluid" alt="...">
+
+<p>Когда пользователь открывает расширенное сообщение, Android запускает объект <b>Intent</b>, который определён в соответствии с уведомлением. Можно также конфигурировать уведомление с добавлением звука, вибрации и мигающих индикаторов на мобильном устройстве.</p>
+
+<p>Этот вид уведомления удобен в том случае, когда приложение работает в фоновом режиме и должно уведомить пользователя о каком-либо важном событии. Фоновое приложение создаёт уведомление в строке состояния, но не запускает активность самостоятельно для получения пользовательского взаимодействия. Это должен сделать только сам пользователь в удобное ему время.</p>
+
+<p>Чтобы создать уведомление в строке состояния, необходимо использовать два класса:</p>
+<ul>
+<li><b>Notification</b> — определяем свойства уведомления строки состояния: значок, расширенное сообщение и дополнительные параметры настройки (звук и др.)</li>
+<li><b>NotificationManager</b> — системный сервис Android, который управляет всеми уведомлениями. Экземпляр <b>NotificationManager</b> создаётся при помощи вызова метода <b>from()</b>, а затем, когда надо показать уведомление пользователю, вызывается метод <b>notify()</b></li>
+</ul>
+
+<p>В большинстве случаев вместо <b>Notification</b> мы будем использовать рекомендованный <b>NotificationCompat</b> из AndroidX.</p>
+
+<pre class="bg-light"><code>
+dependencies {
+    implementation("androidx.core:core-ktx:$core_version")
+}
+</code></pre>
+
+<p>Подключать эту библиотеку нет надобности, если у вас уже используется любая библиотека из AndroidX. Скорее всего оно так и есть, в проекте по умолчанию используется <b>androidx.appcompat:appcompat</b>, но номера версий могут отличаться, поэтому можно добавить зависимость для страховки.</p>
+
+<h2>Показываем уведомление</h2>
+
+<p>Добавим на экран активности кнопку и напишем для демонстрации работы уведомления.</p>
+
+<p>Для начала вам надо создать идентификатор уведомления. Он нужен, чтобы можно было различать уведомления друг от друга. Ведь вы можете создать идеальное приложение, которое уведомляло бы хозяина, что кота надо покормить (первое уведомление), погладить (второе уведомление), почистить лоток (третье уведомление). Если у вас будет один идентификатор, то каждое новое уведомление затрёт предыдущее и хозяин не увидит свои недоработки. Это не дело. Для идентификатора используйте какое-нибудь число. Только не надо оригинальничать, ничего не имею против числа 836, но вам определённо нужно сходить к психологу.</p>
+
+<p>Также следует создать идентификатор канала. Каналы появились в API 26, но старые устройства будут просто игнорировать данный параметр при вызове конструктора <b>NotificationCompat.Builder</b>.</p>
+
+<p>Далее формируется внешний вид и поведение уведомления через построитель <b>NotificationCompat.Builder</b>. Вы можете задать текст уведомления, значок, заголовок и прочие атрибуты. Для простого примера оставил минимальный набор настроек.</p>
+
+<p>Выводится уведомление с помощью метода <b>notify()</b> - своеобразный аналог метода <b>show()</b> у <b>Toast</b> из предыдущего урока.</p>
+
+<p>Не забывайте использовать вместо строк строковые ресурсы, пример лишь для знакомства.</p>
+
+<p>Все примеры рассчитаны для устройств до Android 13, в котором появилось требование к разрешению. Чтобы студия не ругалась на отсутствующее разрешение, мы добавим аннотацию <b>MissingPermission</b>.</p>
+
+<pre class="bg-light"><code>
+Cotlin
+// Если этот код работает, его написал Александр Климов,
+// а если нет, то не знаю, кто его писал.
+package ru.alexanderklimov.notification
+
+import android.os.Bundle
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+
+
+class MainActivity : AppCompatActivity() {
+
+    companion object {
+        const val NOTIFICATION_ID = 101
+        const val CHANNEL_ID = "channelID"
+    }
+
+    <b>@SuppressLint("MissingPermission")</b>
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_main)
+
+        val button: Button = findViewById(R.id.button)
+        button.setOnClickListener {
+            // Создаём уведомление
+            val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_action_cat_24dp)
+                .setContentTitle("Напоминание")
+                .setContentText("Пора покормить кота")
+                .setAutoCancel(true)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+            val notificationManager = NotificationManagerCompat.from(this)
+            notificationManager.notify(NOTIFICATION_ID, builder.build())
+
+            // или
+            //with(NotificationManagerCompat.from(this)) {
+            //    notify(NOTIFICATION_ID, builder.build()) // посылаем уведомление
+            //}
+        }
+    }
+}
+<hr>
+Java
+package ru.alexanderklimov.notification;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    // Идентификатор уведомления
+    private static final int NOTIFY_ID = 101;
+
+    // Идентификатор канала
+    private static String CHANNEL_ID = "Cat channel";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                NotificationCompat.Builder builder =
+                        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.ic_pets_black_24dp)
+                        .setContentTitle("Напоминание")
+                        .setContentText("Пора покормить кота")
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                NotificationManagerCompat notificationManager =
+                        NotificationManagerCompat.from(MainActivity.this);
+                notificationManager.notify(NOTIFY_ID, builder.build());
+            }
+        });
+    }
+}
+</code></pre>
+
+<p>Запустим пример и нажмём кнопку. В строке состояния появится значок. Раскроем уведомление и увидим текст. Уведомление можно смахнуть в сторону для удаления.</p>
+
+<img src="image/teoria23.png" class="img-fluid" alt="...">
+<br><br>
+<img src="image/teoria24.png" class="img-fluid" alt="...">
+
+<p>Затем можете снова нажать кнопку и создать новое уведомление. Покормили кота, снова удалили уведомление. А можете нажать несколько раз, но уведомление будет только одно. Так что, если кот научится нажимать кнопки, то не сможет создать бесконечную ленту уведомлений.</p>
+
+<h2>Реакция на уведомления</h2>
+
+<p>Нажатие на уведомление ни к чему не приведёт. Нужен дополнительный код.</p>
+
+<p>Создадим новые объекты <b>Intent</b> и <b>PendingIntent</b>, которые описывают намерения и целевые действия. В нашем случае мы хотим запустить нашу активность, когда пользователь среагирует на уведомление. Присоединяем объекты через <b>setContentIntent()</b>.</p>
+
+<pre class="bg-light"><code>
+Kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    setContentView(R.layout.activity_main)
+<b>
+    val intent = Intent(this, MainActivity::class.java)
+    intent.apply {
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+    }
+    val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+</b>
+    val button: Button = findViewById(R.id.button)
+    button.setOnClickListener {
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_pets_24dp)
+            .setContentTitle("Напоминание")
+            .setContentText("Пора покормить кота")
+            .setAutoCancel(true)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            <b>.setContentIntent(pendingIntent)</b>
+
+        with(NotificationManagerCompat.from(this)) {
+            notify(notificationId, builder.build()) // посылаем уведомление
+        }
+    }
+}
+<hr>
+Java
+button.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+<b>
+        Intent notificationIntent = new Intent(MainActivity.this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(MainActivity.this,
+                0, notificationIntent,
+                PendingIntent.FLAG_CANCEL_CURRENT);</b>
+
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_pets_black_24dp)
+                .setContentTitle("Напоминание")
+                .setContentText("Пора покормить кота")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                <b>.setContentIntent(contentIntent);</b>
+
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(MainActivity.this);
+        notificationManager.notify(NOTIFY_ID, builder.build());
+    }
+});
+</code></pre>
+
+<p>Теперь можно создать уведомление и затем закрыть приложение. Если нажать на уведомление, оно откроет заново ваше приложение.</p>
+
+<p>Сделаем уведомление более красивым, добавив другие необязательные настройки.</p>
+
+<pre class="bg-light"><code>
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_pets_black_24dp)
+                .setContentTitle("Напоминание")
+                .setContentText("Пора покормить кота")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(contentIntent)<b>
+                // необязательные настройки
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),
+                        R.drawable.hungrycat)) // большая картинка
+                .setTicker("Последнее китайское предупреждение!") // до Lollipop
+                .setAutoCancel(true); // автоматически закрыть уведомление после нажатия</b>
+</code></pre>
+
+<p>Теперь в уведомлении мы видим картинку. Метод <b>setTicker()</b> выводит сообщение в строке состояния на короткое время, а затем исчезает. Это работает только на старых устройствах и сейчас можно уже не использовать.</p>
+
+<p><img src="image/teoria25.png" class="img-fluid" alt="..."></p>
+
+<p>Как я уже упоминал, если вам нужно обновить уведомление, то просто ещё раз отправьте его устройству под этим же идентификатором, но с другим текстом и картинкой.</p>
+
+<p>Если уведомления разного типа, то нужно обновлять идентификаторы. Вспомним урок по подсчёту ворон и изменим код.</p>
+
+<pre class="bg-light"><code>
+// Kotlin
+// Объявим переменную в начале класса
+private var counter = 101
+
+// Теперь у уведомлений будут новые идентификаторы
+notify(counter++, builder.build());
+<hr>
+// Java
+// Объявим переменную в начале класса
+private int counter = 101;
+
+// Теперь у уведомлений будут новые идентификаторы
+notificationManager.notify(counter++, builder.build());
+</code></pre>
+
+<p>Теперь будут появляться новые уведомления. Обычно выводятся три значка для одного приложения (на новых устройствах), потом они группируются и на экране остаётся только один значок. Проверьте самостоятельно.</p>
+
+<p>Совсем не обязательно запускать своё приложение, хотя это является распространённой практикой. Можете задать нужное поведение, например, запустить свой сайт по указанному адресу. Переделаем код:</p>
+
+<pre class="bg-light"><code class="java">
+// Kotlin
+val link = "http://developer.alexanderklimov.ru/android/"
+val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+
+val pendingIntent = PendingIntent.getActivity(this, 0, webIntent, 0)
+
+val button: Button = findViewById(R.id.button)
+button.setOnClickListener {
+    val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+        .setSmallIcon(R.drawable.ic_action_cat)
+        .setContentTitle("Посетите мой сайт")
+        .setContentText(link)
+        .setContentIntent(pendingIntent)
+        .setDefaults(Notification.DEFAULT_SOUND)
+        .setAutoCancel(true)
+
+    with(NotificationManagerCompat.from(this)) {
+        notify(NOTIFICATION_ID, builder.build())
+    }
+}
+<hr>
+// Java
+// код для webIntent напишите самостоятельно
+
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setContentTitle("Посетите мой сайт")
+                .setContentText("http://developer.alexanderklimov.ru/android/")
+                .setContentIntent(pendingIntent)
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .setAutoCancel(true)
+                .setSmallIcon(R.mipmap.ic_launcher);
+
+NotificationManagerCompat notificationManager =
+        NotificationManagerCompat.from(MainActivity.this);
+notificationManager.notify(NOTIFY_ID, builder.build());
+</code></pre>
+
+<p>Можно вывести индикатор прогресса, чтобы указать текущий ход выполнения задачи. Можно установить бесконечное выполнение:</p>
+
+<pre class="bg-light"><code class="java">
+.setProgress(100, 50, false)
+</code></pre>
+
+<h2>Удаление собственных уведомлений</h2>
+
+<p>Вы можете из программы удалить своё уведомление, посланное по глупости (не вздумайте удалять уведомления про кормёжку кота!).</p>
+
+<pre class="bg-light"><code class="java">
+// Удаляем конкретное уведомление
+notificationManager.cancel(NOTIFY_ID);
+
+// Удаляем все свои уведомления
+notificationManager.cancelAll();
+</code></pre>
+
+<p>Если уведомления с указанным идентификатором не будет, то ничего страшного при удалении не произойдёт, поэтому проверку не нужно устраивать.</p>
+
+<h2>Использование настроек по умолчанию</h2>
+
+<p>Можно добавить вибрацию, звуковой сигнал или мерцание светодиодами для ваших уведомлений при помощи настроек по умолчанию. В свойстве <b>defaults</b> вы можете сочетать следующие константы:</p>
+
+<ul>
+<li>Notification.DEFAULT_LIGHTS</li>
+<li>Notification.DEFAULT_SOUND</li>
+<li>Notification.DEFAULT_VIBRATE</li>
+</ul>
+
+<p>Чтобы к уведомлению добавить звук и вибрации по умолчанию, используйте код:</p>
+
+<pre class="bg-light"><code class="java">
+// Kotlin
+.setDefaults(Notification.DEFAULT_SOUND and Notification.DEFAULT_VIBRATE)
+<hr>
+// Java
+notification.defaults = Notification.DEFAULT_SOUND |
+        Notification.DEFAULT_VIBRATE;
+</code></pre>
+
+<p>Если хотите установить сразу все значения по умолчанию, задействуйте константу <b>Notification.DEFAULT_ALL</b>.</p>
+
+<h2>Звуковое сопровождение</h2>
+
+<p>Использование звуковых оповещений для уведомления пользователя о событиях, связанных с устройством (например, входящий звонок), стало привычным. Большинство стандартных событий, от входящих звонков до новых сообщений и низкого заряда батареи, объявляются с помощью звуковых мелодий. Android позволяет проигрывать любой звуковой файл на телефоне в качестве уведомления. Чтобы это сделать, нужно присвоить свойству <b>sound</b> путь <b>URI</b>:</p>
+
+<pre class="bg-light"><code class="java">
+notification.sound = ringURI;
+</code></pre>
+
+<p>Также можно использовать собственный звуковой файл, загруженный на устройстве или добавленный в проект в качестве ресурса.</p>
+
+<pre class="bg-light"><code class="java">
+Uri ringURI =
+        RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+notification.sound = ringURI;
+</code></pre>
+
+<p>С SD-карты:</p>
+
+<pre class="bg-light"><code class="java">
+notification.sound = Uri.parse("file:///sdcard/cat.mp3"); // если знаем точный путь!
+</code></pre>
+
+<h2>Виброзвонок</h2>
+
+<p>Вы можете использовать функцию виброзвонка в телефоне, чтобы сопровождать ваше уведомление вибрацией для привлечения внимания пользователя.</p>
+
+<p>Чтобы использовать виброзвонок, передайте в свойство <b>vibrate</b> объекта <b>Notification</b> массив значений типа <b>long</b>. Постройте массив, учитывая, что значения, отвечающие за продолжительность вибрации (в миллисекундах), чередуются со значениями, которые означают длину паузы между вибрациями.</p>
+
+<p>Прежде чем использовать виброзвонок в своем приложении, необходимо получить нужные полномочия, прописав их в манифесте:</p>
+
+<pre class="bg-light"><code class="xml">
+&lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot;/&gt;
+</code></pre>
+
+<p>В следующем примере показано, как изменить уведомление, чтобы одна секунда вибрации сменялась одной секундой паузы на протяжении пяти секунд:</p>
+
+<pre class="bg-light"><code class="java">
+long[] vibrate = new long[] { 1000, 1000, 1000, 1000, 1000 };
+notification.vibrate = vibrate;
+</code></pre>
+
+<div class="alert alert-info">
+В настоящее время эмулятор Android не умеет оповещать о вибрации ни визуально, ни с помощью звуковых сигналов.
+</div>
+
+<h2 >Светодиодная индикация</h2>
+
+<p>Объект <b>Notification</b> включает в себя свойства для настройки цвета и частоты мерцания светодиодов устройства. Здесь стоит обратить внимание, что конкретные модели устройств могут не содержать светодиодные индикаторы или иметь другие цвета.</p>
+
+<p>Свойство <b>ledARGB</b> может устанавливать цвет для светодиодной подсветки. Свойства <b>ledOffMS</b> и <b>ledOnMS</b> позволяют регулировать частоту и поведение светодиодов. Вы можете включить светодиоды, присвоив свойству <b>ledOnMS</b> значение 1, а <b>ledOffMS</b> – 0. Присвоив им обоим значения 0, светодиоды можно выключить.</p>
+
+<p>Настроив работу со светодиодами, необходимо также добавить флаг <b>FLAG_SHOW_LIGHTS</b> к свойству <b>flags</b> объекта <b>Notification</b>.</p>
+
+<p>В следующем фрагменте кода показано, как включить на устройстве красный светодиод:</p>
+
+<pre class="bg-light"><code class="java">
+notification.ledARGB = Color.RED;
+notification.ledOffMS = 0;
+notification.ledOnMS = 1;
+notification.flags = notification.flags | Notification.FLAG_SHOW_LIGHTS;
+</code></pre>
+
+<div class="alert alert-info">
+В настоящее время эмулятор Android не умеет визуально показывать активность светодиодов.
+</div>
+
+<h2>Текущие и настойчивые уведомления</h2>
+
+<p>Вы можете делать уведомления текущими и/или настойчивыми, устанавливая флаги <b>FLAG_INSISTENT</b> и <b>FLAG_ONGOING_EVENT</b>. Уведомления, помеченные как текущие, используются для представления событий, которые выполняются в данный момент времени (например, загрузка файла, фоновое проигрывание музыки). Текущие уведомления необходимы для сервисов, работающих на переднем плане. Пример установки флагов:</p>
+
+<pre class="bg-light"><code class="java">
+notification.flags = notification.flags | Notification.FLAG_ONGOING_EVENT;
+</code></pre>
+
+<p>В расширенной статусной строке текущие события отделены от обычных, чтобы вы сразу могли их отличить.</p>
+
+<p>Настойчивые уведомления непрерывно повторяют звуковые сигналы, вибрируют и мерцают светодиодами, пока не будут остановлены. Подобные уведомления, как правило, используются для событий, которые требуют немедленного и своевременного внимания, таких как входящий звонок, срабатывание будильника или время кормёжки кота. В следующем фрагменте кода показано, как сделать уведомление настойчивым:</p>
+
+<pre class="bg-light"><code class="java">
+notification.flags = notification.flags | Notification.FLAG_INSISTENT;
+</code></pre>
+
+<p>В методе <b>getActivity()</b> может понадобиться изменить флаг, например.</p>
+
+<pre class="bg-light"><code class="java">
+PendingIntent pendingIntent = PendingIntent.getActivity(
+        context, 
+        0, intent, <b>Intent.FLAG_ACTIVITY_NEW_TASK</b>);
+</code></pre>
+
+<p>Существуют и другие флаги. Хотя в большинстве случаев используется просто 0.</p>
+
+<p>В Android 5.0 пользователь может установить собственный уровень оповещений, нажав на кнопки увеличения громкости на домашнем экране. Появится диалоговое окно, в котором задаётся один из трёх доступных уровней.</p>
+
+<p><img src="image/teoria26.png" class="img-fluid" alt="..."></p>
+
+<h2>Запустить запущенную активность</h2>
+
+<p>Не сразу бывает заметно, но на самом деле, когда при нажатии на уведомлении у вас запускается активность, то запускается не старая активность, которая была на экране до этого, а новая. Это можно увидеть в примере, если, например, есть текстовое поле с текстом. Введите какой-нибудь текст в активности, а потом создайте уведомление, вызывающее активность. Вы увидите, что запустится новая активность с пустыми текстовым полем, хотя мы ожидали увидеть запущенную активность. Если вам нужен именно этот вариант, то используйте флаги для намерения.</p>
+
+<pre class="bg-light"><code class="java">
+Intent intent = new Intent(context, MainActivity.class);
+
+intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+        | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+</code></pre>
+
+<p>Либо вы можете прописать в манифесте для нужной активности атрибут <b>android:launchMode="singleTop"</b>.</p>
+
+<h2>Меняем цвет значка</h2>
+
+<p>По умолчанию, значок выводится в сером круге. Вы можете изменить цвет круга, вызвав новый метод <b>setColor()</b>, который появился в API 21:</p>
+
+<pre><code class="java">
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+        ...
+        <b>.setColor(Color.GREEN)</b>
+        .build();
+</code></pre>
+
+<p><img src="image/teoria27.png" class="img-fluid" alt="..."></p>
+
+<h2>Анимированный значок для уведомления</h2>
+
+<p>Покажу один фокус. Возьмём код из примера и заменим одну строчку, которая отвечает за вывод маленького значка - <b>.setSmallIcon(android.R.drawable.stat_sys_upload)</b>:</p>
+
+<pre class="bg-light"><code class="java">
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.stat_sys_upload)
+                ... // другой код
+                .setAutoCancel(true); // автоматически закрыть уведомление после нажатия
+</code></pre>
+
+<p>Запускаем код и создаём уведомление. Вы увидите, что в строке состояния выводится анимированный значок стрелки. Такой способ стоит использовать для действительно важных сообщений, чтобы понапрасну не раздражать пользователя.</p>
+
+<p><img src="image/teoria28.png" class="img-fluid" alt="..."></p>
+
+<p>Возможно, если вы опустите метод <b>setTicker()</b>, то значок уже не будет анимированным, где-то работало, где-то нет. Проверяйте самостоятельно.</p>
+
+<p>Вы можете попробовать поискать другие системные анимации, например, <b>android.R.drawable.stat_sys_download</b> или создать собственную анимацию.<p>
+
+<pre class="bg-light"><code class="java">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;animation-list android:oneshot=&quot;false&quot;
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:duration=&quot;200&quot; android:drawable=&quot;@drawable/stat_sys_wifi_signal_1_anim0&quot; /&gt;
+    &lt;item android:duration=&quot;200&quot; android:drawable=&quot;@drawable/stat_sys_wifi_signal_1_anim1&quot; /&gt;
+    &lt;item android:duration=&quot;200&quot; android:drawable=&quot;@drawable/stat_sys_wifi_signal_1_anim2&quot; /&gt;
+    &lt;item android:duration=&quot;200&quot; android:drawable=&quot;@drawable/stat_sys_wifi_signal_1_anim3&quot; /&gt;
+    &lt;item android:duration=&quot;200&quot; android:drawable=&quot;@drawable/stat_sys_wifi_signal_1_anim4&quot; /&gt;
+    &lt;item android:duration=&quot;200&quot; android:drawable=&quot;@drawable/stat_sys_wifi_signal_1_anim5&quot; /&gt;
+&lt;/animation-list&gt;
+</code></pre>
+
+<p>На странице http://forum.xda-developers.com/showthread.php?t=1088677 энтузиасты выложили несколько готовых примеров анимации, которые можно скачать.</p>
+
+<h2 >Расширенные возможности уведомлений</h2>
+
+<p>В Android 4.1 Jelly Bean появились дополнительные возможности для уведомлений через настройку стилей.</p>
+
+<p>Добавьте на экран четыре кнопки.</p>
+
+<h3 >Уведомление с тремя кнопками</h3>
+
+<p>Начнём с первого варианта. Теперь в уведомлениях можно размещать до трёх кнопок. Это может быть удобным, если приложение состоит из нескольких активностей или нужно предложить три разных варианта развития сценария. За появление кнопок в уведомлении отвечает метод <b>setAction()</b>.</p>
+
+<pre class="bg-light"><code class="java">
+Intent notificationIntent = new Intent(MainActivity.this, SecondActivity.class);
+PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,
+        0, notificationIntent,
+        PendingIntent.FLAG_CANCEL_CURRENT);
+
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_pets_black_24dp)
+                .setContentTitle("Посылка")
+                .setContentText("Это я, почтальон Печкин. Принес для вас посылку")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),
+                        R.drawable.hungrycat)) // большая картинка
+                <b>.addAction(R.drawable.ic_lock_open_black_24dp, "Открыть", pendingIntent)
+                .addAction(R.drawable.ic_refresh_white_24dp, "Отказаться", pendingIntent)
+                .addAction(R.drawable.ic_pets_black_24dp, "Другой вариант", pendingIntent)</b>
+                .setAutoCancel(true); // автоматически закрыть уведомление после нажатия
+
+NotificationManagerCompat notificationManager =
+        NotificationManagerCompat.from(MainActivity.this);
+notificationManager.notify(NOTIFY_ID, builder.build());
+</code></pre>
+
+<p><img src="image/teoria29.png" class="img-fluid" alt="..."></p>
+
+<p>Обратите внимание, что у кнопок текст может обрезаться и пользователь не увидит текст, поэтому вам следует придумать "говорящие" значки, по которым будет понятен смысл нажатия. В нашем примере при нажатии на любой из трёх кнопок запустится вторая активность.</p>
+
+<p>На некоторых устройствах можно увидеть уведомление без значков и с текстом. Также были варианты, когда выводились только значки.</p>
+
+<p><img src="image/teoria30.png" class="img-fluid" alt="..."></p>
+
+<h3>Уведомление с длинным текстом. BigTextStyle().bigText()</h3>
+
+<p>Если вы внимательно смотрели на уведомление, то могли увидеть, что длинный текст, помещённый в метод <b>setContentText()</b>, вывелся на экран не полностью. Если информация слишком важная и вам хочется её показать в уведомлении полностью, то подойдёт вариант со стилем <b>BigTextStyle</b>:</p>
+
+<pre class="bg-light"><code class="java">
+// Kotlin
+.setStyle(NotificationCompat.BigTextStyle()
+.bigText("Когда кормить будут? Далее идёт очень длинный текст про бедного котика, которого морят голодом уже целых три минуты"))
+<hr>
+// Java
+Intent notificationIntent = new Intent(MainActivity.this, SecondActivity.class);
+PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,
+        0, notificationIntent,
+        PendingIntent.FLAG_CANCEL_CURRENT);
+
+String bigText = "Это я, почтальон Печкин. Принёс для вас посылку. "
+        + "Только я вам её не отдам. Потому что у вас документов нету. ";
+
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_pets_black_24dp)
+                .setContentTitle("Посылка")
+                .setContentText("Это я, почтальон Печкин. Принес для вас посылку")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),
+                        R.drawable.hungrycat)) // большая картинка
+                .addAction(R.drawable.ic_pets_black_24dp, "Запустить активность",
+                        pendingIntent)
+                <b>.setStyle(new NotificationCompat.BigTextStyle().bigText(bigText))</b>
+                .setAutoCancel(true); // автоматически закрыть уведомление после нажатия
+
+NotificationManagerCompat notificationManager =
+        NotificationManagerCompat.from(MainActivity.this);
+notificationManager.notify(NOTIFY_ID, builder.build());
+</code></pre>
+
+<p><img src="image/teoria31.png" class="img-fluid" alt="..."></p>
+
+<h3>Уведомление с большой картинкой: BigPictureStyle().bigPicture()</h3>
+
+<p>Пример с большой картинкой аналогичен с предыдущим примером. Только мы задаём уже другой стиль для уведомления. Вместо стиля длинного текста используется стиль <b>BigPictureStyle().bigPicture()</b>:</p>
+
+<pre class="bg-light"><code class="java">
+// Kotlin
+.setStyle(
+    NotificationCompat.BigPictureStyle()
+        .bigPicture(BitmapFactory.decodeResource(resources,R.drawable.hungrycat))
+        .bigLargeIcon(BitmapFactory.decodeResource(resources,R.drawable.table_cat))
+        .setBigContentTitle("Beautiful Cat")
+        .setSummaryText("Голодный кот")
+)
+<hr>
+// Java
+Intent notificationIntent = new Intent(MainActivity.this, MainActivity.class);
+PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,
+        0, notificationIntent,
+        PendingIntent.FLAG_CANCEL_CURRENT);
+
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_pets_black_24dp)
+                .setContentTitle("Посылка")
+                .setContentText("Это я, почтальон Печкин. Принёс для вас посылку")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),
+                        R.drawable.hungrycat)) // большая картинка
+                .addAction(R.drawable.ic_pets_black_24dp, "Запустить активность",
+                        pendingIntent)
+                // большая картинка из ресурсов
+                <b>.setStyle(new NotificationCompat.BigPictureStyle()
+                        .bigPicture(BitmapFactory.decodeResource(getResources(),
+                                R.drawable.hungrycat)))</b>
+                .setAutoCancel(true); // автоматически закрыть уведомление после нажатия
+
+NotificationManagerCompat notificationManager =
+        NotificationManagerCompat.from(MainActivity.this);
+notificationManager.notify(NOTIFY_ID, builder.build());
+</code></pre>
+
+<p><img src="image/teoria32.png" alt="BigPictureStyle"></p>
+
+<p>Слишком большая картинка будет обрезана.</p>
+
+<h3>Уведомление в стиле InboxStyle</h3>
+
+<p>Есть ещё один стиль <b>InboxStyle</b>, напоминающий стиль писем в папке Входящие. Стиль разместит до пяти ваших строк в виде списка. Весь код приводить не буду, меняется только вызов <b>setStyle()</b></p>
+
+<pre class="bg-light"><code class="java">
+// Kotlin
+.setStyle(
+    NotificationCompat.InboxStyle()
+        .addLine("This is first line")
+        .addLine("This is second line")
+        .addLine("This is third line")
+        .addLine("This is fourth line")
+        .addLine("This is fifth line")
+        .setBigContentTitle("This is Content Title.")
+        .setSummaryText("This is summary text.")
+)
+<hr>
+// Java
+...
+.setStyle(new NotificationCompat.InboxStyle()
+        .addLine("Первое сообщение").addLine("Второе сообщение")
+        .addLine("Третье сообщение").addLine("Четвертое сообщение")
+        .setSummaryText("+2 more"))
+</code></pre>
+
+<p><img src="image/teoria33.png" alt="InboxStyle"></p>
+
+<h3>Уведомление в стиле мессенджера: MessagingStyle</h3>
+
+<p>Стиль <b>MessagingStyle</b> пригодится для отображения сообщений из мессенджера или чата. Появился в Android Nougat.</p>
+
+<pre class="bg-light"><code>
+// Kotlin
+button.setOnClickListener {
+    val sender = Person.Builder()
+            .setName("Мурзик")
+            //.setIcon(...) // можно добавить значок
+            .build()
+
+    val messagingStyle = NotificationCompat.MessagingStyle(sender)
+            .addMessage("Хозяин, когда кормить будут?", Date().time, sender)
+
+    val builder = NotificationCompat.Builder(this, "Cat channel")
+            .setSmallIcon(R.drawable.ic_pets_black_24dp)
+            .setStyle(messagingStyle)
+
+    val channel = NotificationChannel("Cat channel", "channel", NotificationManager
+            .IMPORTANCE_DEFAULT).apply {
+        description = "Feed cat"
+    }
+
+    with(NotificationManagerCompat.from(this)) {
+        createNotificationChannel(channel)
+        notify(notificationId, builder.build())
+    }
+}
+<hr>
+// Java
+Intent notificationIntent = new Intent(MainActivity.this, SecondActivity.class);
+PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,
+        0, notificationIntent,
+        PendingIntent.FLAG_CANCEL_CURRENT);
+
+Person murzik = new Person.Builder().setName("Мурзик").build();
+Person vaska = new Person.Builder().setName("Васька").build();
+
+NotificationCompat.MessagingStyle messagingStyle = new NotificationCompat.MessagingStyle
+        (murzik)
+        .setConversationTitle("Android chat")
+        .addMessage("Привет котаны!", System.currentTimeMillis(), murzik)
+        .addMessage("А вы знали, что chat по-французски кошка?", System
+                        .currentTimeMillis(),
+                murzik)
+        .addMessage("Круто!", System.currentTimeMillis(),
+                vaska)
+        .addMessage("Ми-ми-ми", System.currentTimeMillis(), vaska)
+        .addMessage("Мурзик, откуда ты знаешь французский?", System.currentTimeMillis(),
+                vaska)
+        .addMessage("Шерше ля фам, т.е. ищите кошечку!", System.currentTimeMillis(),
+                murzik);
+
+NotificationCompat.Builder builder =
+        new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_pets_black_24dp)
+                .setContentIntent(pendingIntent)
+                .addAction(R.drawable.ic_pets_black_24dp, "Запустить активность",
+                        pendingIntent)
+                .setStyle(messagingStyle)
+                .setAutoCancel(true); // автоматически закрыть уведомление после нажатия
+
+NotificationManagerCompat notificationManager =
+        NotificationManagerCompat.from(MainActivity.this);
+notificationManager.notify(NOTIFY_ID, builder.build());
+</code></pre>
+
+<p>В конструкторе <b>MessagingStyle</b> вы должны указать имя текущего пользователя, который будет видеть свои сообщения.</p>
+
+<p>У класса <b>Person</b> есть другие полезные методы: <b>setIcon()</b> (значок), <b>setData()</b> (картинки) и др.</p>
+
+<p>В <b>setConversationTitle()</b> указываем название беседы, удобно при разговоре двух и более котов. В поздних версиях не имеет эффекта, можно убрать.</p>
+
+<p>Разговор строится через цепочку вызовов методов <b>addMessage()</b>, в которых указывается текст сообщения, время, отправитель. Количество сообщений может быть любым. При большом количестве (задано в <b>MessagingStyle.MAXIMUM_RETAINED_MESSAGES</b>) старые сообщения начнут удаляться автоматически.</p>
+
+<p><img src="image/teoria34.png" alt="MessagingStyle">
+
+<p>Подводя итоги, следует отметить, у уведомлений очень много методов, которые можно использовать в своём приложении. Вот как может выглядеть полный набор:</p>
+
+<pre class="bg-light"><code class="java">
+new Notification.Builder(this.getApplicationContext())
+        .setAutoCancel(boolean autoCancel)
+        .setContent(RemoteViews views)
+        .setContentInfo(CharSequence info)
+        .setContentIntent(PendingIntent intent)
+        .setContentText(CharSequence text)
+        .setContentTitle(CharSequence title)
+        .setDefaults(int defaults)
+        .setDeleteIntent(PendingIntent intent))
+        .setFullScreenIntent(PendingIntent intent, boolean highPriority)
+        .setLargeIcon(Bitmap icon)
+        .setLights(int argb, int onMs, int offMs)
+        .setNumber(int number)
+        .setOngoing(boolean ongoing)
+        .setOnlyAlertOnce(boolean onlyAlertOnce)
+        .setPriority(int pri)
+        .setProgress(int max, int progress, boolean indeterminate)
+        .setShowWhen(boolean show)
+        .setSmallIcon(int icon, int level)
+        .setSmallIcon(int icon)
+        .setSound(Uri sound)
+        .setSound(Uri sound, int streamType)
+        .setStyle(Notification.Style style)
+        .setSubText(CharSequence text)
+        .setTicker(CharSequence tickerText, RemoteViews views)
+        .setTicker(CharSequence tickerText)
+        .setUsesChronometer(boolean b)
+        .setVibrate(long[] pattern)
+        .setWhen(long when)
+        .addAction(int icon, CharSequence title, PendingIntent intent)
+        .build()
+</code></pre>
+
+<ul>
+<li><b>setSmallIcon()</b> устанавливает маленький значок, который выводится в строке состояния, а также в правой части открытого уведомления.</li>
+<li><b>setLargeIcon()</b> устанавливает большой значок, который выводится в открытом уведомлении слева.</li>
+<li><b>setWhen()</b> определяет время для уведомления, по умолчанию время создания уведомления</li>
+<li><b>setTicker()</b> выводит временную строку в строке состояния, которая затем исчезает. Остаётся только маленький значок (см. выше)</li>
+<li><b>setNumber()</b> добавляет число справа от уведомления (не везде работает)</li>
+<li><b>setShowWhen()</b> - показывать ли время в уведомлении (в Android 7.0 по умолчанию не показывается)</li>
+<li><b>setUsesChronometer()</b> выводит счётчик вместо времени, показывающий сколько прошло от времени when. Полезно для уведомления секундомера или звонка</li>
+<li><b>setContentInfo()</b> добавляет текст справа от уведомления (в новых версиях сверху)</li>
+<li><b>setColor()</b> закрашивает значок и название приложения указанным цветом</li>
+<li><b>setOngoing()</b> выводит уведомление поверх обычных уведомлений, такое уведомление нельзя закрыть или смахнуть.</li>
+<li><b>setVibrate()</b> - виброзвонок</li>
+<li><b>setSound()</b> - звук</li>
+<li><b>setLights()</b> - цвет LED-индикатора</li>
+<li><b>setPriority()</b> устанавливает приоритет от -2 (<b>NotificationCompat.PRIORITY_MIN</b>) до 2 (<b>NotificationCompat.PRIORITY_MAX</b>)</li>
+<li><b>setTimeoutAfter()</b> (появилось в API 26) - устанавливает таймаут, после которого уведомление удалится</li>
+<li><b>setProgress()</b> - индикатор прогресса</li>
+</ul>
+
+<h2>Приоритет</h2>
+
+<p>Не все уведомления одинаковы важны. Например, напоминание о том, что пора кормить кота - это сверхважное сообщение (не обсуждается). Угроза землетрясения, цунами, урагана - тоже очень важные сообщения. Новые версии программы, новое письмо и т.д. - не слишком важные уведомления, которые можно почитать после того, как покормили кота.</p>
+
+<p>В API 16 появился новый метод <b>setPriority()</b> с константами по мере увеличения: <b>NotificationCompat.PRIORITY_MIN</b>, <b>NotificationCompat.PRIORITY_LOW</b>, <b>NotificationCompat.PRIORITY_DEFAULT</b>, <b>NotificationCompat.PRIORITY_HIGH</b>, <b>NotificationCompat.PRIORITY_MAX</b>.</p>
+
+<pre class="bg-light"><code class="java">
+...
+<b>.setPriority(NotificationCompat.PRIORITY_HIGH)</b>
+...
+.build();
+</code></pre>
+
+<p>Чем выше приоритет уведомления, тем выше он находится среди остальных уведомлений. Таким образом, важные сообщения всегда будут наверху, даже если поступили позже других менее важных сообщений. Не злоупотребляйте этой возможностью и трезво оцените важность вашего уведомления.</p>
+
+<p>В Android 5.0 произошли небольшие изменения в поведении. Если установлены максимальные приоритеты <b>Notification.PRIORITY_HIGH</b> или <b>Notification.MAX</b>, то при вызове сначала уведомление появится в виде плавающего окна в верхней части экрана, а только потом закроется и останется в виде стандартного уведомления в строке состояния.</p>
+
+<p><img src="image/teoria35.png"></p>
+
+<p>В Android 8.0 вместо приоритетов стали использовать важность - <b>IMPORTANCE_XXX</b>.</p>
+
+<p>Напоследок дам совет - читайте документацию. Google постоянно вносит какие-то изменения и добавления. Практически в каждой новой версии Android что-то менялось. Я не в состоянии отслеживать новинки и оперативно добавлять в статью.</p>
+
+<p>Пример изменений, которые произошли в API 23:</p>
+
+<ul>
+<li>Удалили метод <b>setLatestEventInfo()</b></li>
+<li>Добавили новые методы <b>getLargeIcon()</b> и <b>getSmallIcon()</b></li>
+<li>Добавили новое поле класса <b>CATEGORY_REMINDER</b> и объявили устаревшими поля <b>icon</b> и <b>largeIcon</b>.</li>
+</ul>
+
+<p>В уведомлениях можно использовать собственный макет, используя <b>RemoteViews</b>. Для стилизации макета изучите классы <b>DecoratedCustomViewStyle</b> и <b>DecoratedMediaCustomViewStyle</b>. Подключается через метод <b>setCustomContentView()</b>.</p>
+
+<pre class="bg-light"><code>
+RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.notification_custom_view);
+remoteViews.setImageViewResource(R.id.image_icon, iconResource);
+remoteViews.setTextViewText(R.id.text_title, title);
+remoteViews.setTextViewText(R.id.text_message, message);
+remoteViews.setImageViewResource(R.id.image_end, imageResource);
+
+Notification.Builder builder = new Notification.Builder(context)
+        .setSmallIcon(R.drawable.ic_phonelink_ring_primary_24dp)
+        .setCustomContentView(remoteViews)
+        .setStyle(new Notification.DecoratedCustomViewStyle());
+        .setAutoCancel(true);
+</code></pre>
+
+<p>В уведомлениях появилась возможность вводить собственный текст для ответа на какое-то сообщение. Для этого используется механизм <b>Direct Reply</b>, который использует <b>RemoteInput API</b>.</p>
+
+<h2>NotificationListenerService. Прослушка уведомлений</h2>
+
+<p>В API 18 (Android 4.3) появился новый класс <b>NotificationListenerService</b>, позволяющий следить за уведомлениями. С тех пор я не следил за этой темой. Материал был написан по горячим следам в 2015 году. Если не работает, то разбирайтесь самостоятельно.</p>
+
+<p>Новый класс является службой, которая получает сигналы от системы, когда появляются или удаляются уведомления. Таким образом вы можете отслеживать не только свои уведомления (они и так вам известны), но и уведомления от других приложений. Это может быть полезным для каких-то расширений к приложениям.</p>
+
+<p>Вам нужно наследоваться от данного класса, зарегистрировать его в манифесте с разрешением <b>BIND_NOTIFICATION_LISTENER_SERVICE</b> и включить в него специальный фильтр намерения.</p>
+
+<p>У службы есть два метода <b>onNotificationPosted()</b> и <b>onNotificationRemoved()</b> с параметром <b>StatusBarNotification</b>, который содержит полезные методы об уведомлении.</p>
+
+<ul>
+<li><b>getId()</b></li>
+<li><b>getNotification()</b></li>
+<li><b>getPackageName()</b></li>
+<li><b>getPostTime()</b></li>
+<li><b>isClearable()</b></li>
+<li><b>isOngoing()</b></li>
+</ul>
+
+<p>Пользователь должен явно разрешить приложению следить за уведомлениями через <b>Настройки | Безопасность</b>. Если на устройстве нет приложений, которые следят за уведомлениями, то в настройках вы не увидите никаких пунктов о разрешении. Когда вы создадите такое приложение, то там появится новый пункт <b>Доступ к уведомлениям</b>.</p>
+
+<p><img src="image/teoria36.png" alt="NotificationListenerService"></p>
+
+<p>Щёлкнув на нём, вы попадёте на страницу со списком программ, желающих следить за уведомлениями. Поставим флажок у своей программы.</p>
+
+<p><img src="image/teoria37.png" alt="NotificationListenerService"></p>
+
+<p>Получим предупреждение.</p>
+
+<p><img src="image/teoria38.png" alt="NotificationListenerService"></p>
+
+<p>После этого в настройках будет указано число приложений, имеющих соответствующее разрешение.</p>
+
+<p><img src="image/teoria39.png" alt="NotificationListenerService"></p>
+
+<p>Перейдём к практической части. Подготовим разметку из нескольких кнопок и текстовой метки для вывода информации.</p>
+
+<pre class="bg-light"><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
+    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/buttonCreateNotification&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:onClick=&quot;onButtonClicked&quot;
+        android:text=&quot;Создать уведомление&quot; /&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/buttonListNotification&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:onClick=&quot;onButtonClicked&quot;
+        android:text=&quot;Список уведомлений&quot; /&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/buttonClearNotification&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:onClick=&quot;onButtonClicked&quot;
+        android:text=&quot;Очистить все уведомления&quot; /&gt;
+
+    &lt;ScrollView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;&gt;
+
+        &lt;TextView
+            android:id=&quot;@+id/textView&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;NotificationListenerService Example&quot;
+            android:textAppearance=&quot;?android:attr/textAppearanceMedium&quot; /&gt;
+
+    &lt;/ScrollView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Создадим новую службу.</p>
+
+<pre class="bg-light"><code class="java">
+package ru.alexanderklimov.testapplication;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.service.notification.NotificationListenerService;
+import android.service.notification.StatusBarNotification;
+import android.util.Log;
+
+public class NLService extends NotificationListenerService {
+
+    private String TAG = this.getClass().getSimpleName();
+    private NLServiceReceiver mReceiver;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mReceiver = new NLServiceReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("ru.alexanderklimov.NOTIFICATION_LISTENER_SERVICE_EXAMPLE");
+        registerReceiver(mReceiver, filter);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mReceiver);
+    }
+
+    @Override
+    public void onNotificationPosted(StatusBarNotification sbn) {
+
+        Log.i(TAG, "onNotificationPosted");
+        Log.i(TAG, "ID :" + sbn.getId() + "\\t" + sbn.getNotification().tickerText + "\\t" + sbn.getPackageName());
+        Intent intent = new Intent("ru.alexanderklimov.NOTIFICATION_LISTENER_EXAMPLE");
+        intent.putExtra("notification_event", "onNotificationPosted:\\n" + sbn.getPackageName() + "\\n");
+        sendBroadcast(intent);
+    }
+
+    @Override
+    public void onNotificationRemoved(StatusBarNotification sbn) {
+        Log.i(TAG, "onNOtificationRemoved");
+        Log.i(TAG, "ID :" + sbn.getId() + "\\t" + sbn.getNotification().tickerText + "\\t" + sbn.getPackageName());
+        Intent intent = new Intent("ru.alexanderklimov.NOTIFICATION_LISTENER_EXAMPLE");
+        intent.putExtra("notification_event", "onNotificationRemoved:\\n" + sbn.getPackageName() + "\\n");
+        sendBroadcast(intent);
+    }
+
+    class NLServiceReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getStringExtra("command").equals("clearall")) {
+                NLService.this.cancelAllNotifications();
+            } else if (intent.getStringExtra("command").equals("list")) {
+                Intent notificationIntent = new Intent("ru.alexanderklimov.NOTIFICATION_LISTENER_EXAMPLE");
+                notificationIntent.putExtra("notification_event", "=======");
+                sendBroadcast(notificationIntent);
+
+                int i = 1;
+                for (StatusBarNotification sbn : NLService.this.getActiveNotifications()) {
+                    Intent infoIntent = new Intent("ru.alexanderklimov.NOTIFICATION_LISTENER_EXAMPLE");
+                    infoIntent.putExtra("notification_event", i + " " + sbn.getPackageName() + "\\n");
+                    sendBroadcast(infoIntent);
+                    i++;
+                }
+
+                Intent listIntent = new Intent("ru.alexanderklimov.NOTIFICATION_LISTENER_EXAMPLE");
+                listIntent.putExtra("notification_event", "Notification List");
+                sendBroadcast(listIntent);
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>В манифесте добавляем новый блок.</p>
+
+<pre class="bg-light"><code class="xml">
+&lt;service android:name=&quot;.NLService&quot;
+    android:label=&quot;@string/app_name&quot;
+    android:permission=&quot;android.permission.BIND_NOTIFICATION_LISTENER_SERVICE&quot;&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;android.service.notification.NotificationListenerService&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/service&gt;
+</code></pre>
+
+<p>Код для кнопок:</p>
+
+<pre class="bg-light"><code class="java">
+package ru.alexanderklimov.testapplication;
+
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.TextView;
+
+
+public class MainActivity extends ActionBarActivity {
+
+    private TextView mInfoTextView;
+    private NotificationBroadcastReceiver mReceiver;
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+        setTitle("NotificationListenerService Demo");
+
+        mInfoTextView = (TextView) findViewById(R.id.textView);
+        mReceiver = new NotificationBroadcastReceiver();
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("ru.alexanderklimov.NOTIFICATION_LISTENER_EXAMPLE");
+        registerReceiver(mReceiver, filter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mReceiver);
+    }
+
+    public void onButtonClicked(View view){
+
+        if(view.getId() == R.id.buttonCreateNotification){
+            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+            builder.setContentTitle("Важное уведомление");
+            builder.setContentText("Пора кормить кота!");
+            builder.setTicker("Хозяин, проснись!");
+            builder.setSmallIcon(R.drawable.ic_launcher);
+            builder.setAutoCancel(true);
+            manager.notify((int) System.currentTimeMillis(), builder.build());
+        }
+        else if(view.getId() == R.id.buttonClearNotification){
+            Intent intent = new Intent("ru.alexanderklimov.NOTIFICATION_LISTENER_SERVICE_EXAMPLE");
+            intent.putExtra("command", "clearall");
+            sendBroadcast(intent);
+        }
+        else if(view.getId() == R.id.buttonListNotification){
+            Intent intent = new Intent("ru.alexanderklimov.NOTIFICATION_LISTENER_SERVICE_EXAMPLE");
+            intent.putExtra("command", "list");
+            sendBroadcast(intent);
+        }
+    }
+
+    class NotificationBroadcastReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String temp = intent.getStringExtra("notification_event") + "\\n" + mInfoTextView.getText();
+            mInfoTextView.setText(temp);
+        }
+    }
+}
+</code></pre>
+
+<p>Первая кнопка запускает уведомление, чтобы увидеть, что приложение работает. Если вы хотите увидеть, как приложение следит за другими уведомлениями, то запустите <b>Play Market</b> и скачайте какую-нибудь игру или программу. Во время скачивания и установки генерируются уведомления. На следующем скриншоте видны уведомления от приложения <b>Загрузки</b> во время скачивания (<b>com.android.providers.downloads</b>) и от процесса установки (<b>com.android.vending</b>).</p>
+
+<p><img src="images/notificationlistenerservice5.png" alt="NotificationListenerService"></p>
+
+<p>Если вы помните, в предупреждающем сообщении говорилось о возможности удалять уведомления. Третья кнопка позволяет это сделать. Вот почему эта настройка относится к разделу безопасности - ваша программа может удалять поступающие уведомления без ведома владельца устройства.</p>
+
+<p id="settings">Вы можете программно запустить раздел с разрешением на использование службы.</p>
+
+<pre class="bg-light"><code class="java">
+// API 22
+Intent intent = new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
+if (intent.resolveActivity(getPackageManager()) != null) {
+    startActivity(intent);
+}
+</code></pre>
+
+<p>В API 19 появился более широкий доступ к элементам уведомления. Поэтому через метод <b>sbn.getNotification()</b> вы можете получить объект класса <b>Notification</b> и вытащить из него картинки (Large Icon), текст и т.д.</p>
+
+<pre class="bg-light"><code class="java">
+Notification mNotification=sbn.getNotification();
+Bundle extras = mNotification.extras;
+
+String notificationTitle = extras.getString(Notification.EXTRA_TITLE);
+int notificationIcon = extras.getInt(Notification.EXTRA_SMALL_ICON);
+Bitmap notificationLargeIcon = 
+        ((Bitmap) extras.getParcelable(Notification.EXTRA_LARGE_ICON));
+CharSequence notificationText = extras.getCharSequence(Notification.EXTRA_TEXT);
+CharSequence notificationSubText = extras.getCharSequence(Notification.EXTRA_SUB_TEXT);
+</code></pre>
+
+
+
+            <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-secondary " href="#">Наверх</a>
+            <a class="btn btn-outline-primary" href="урок4.html" tabindex="-1" aria-disabled="true">Следующий урок</a>
+          </nav>
+    
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="js/dashboard.js"></script>
+  </body>
+</html>
